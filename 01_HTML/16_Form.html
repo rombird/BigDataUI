@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* common */
+        * {
+            font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn {
+            border: 1px solid gray;
+            min-width: 80px;
+            height: 100%;
+            line-height: 35px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: royalblue;
+            color: white;
+            border: 0;
+        }
+
+        /* form */
+        form {
+            width: 380px;
+            border: 1px solid;
+            margin: 50px auto;
+            /* margin :위쪽아래쪽, 좌우 */
+        }
+
+        form>.row {
+            margin: 10px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 5px;
+            height: 35px;
+        }
+
+        form>.row>label {
+            display: block;
+            min-width: 85px;
+            height: 100%;
+            line-height: 35px;
+            /* border:1px solid; */
+        }
+
+        /* input type="text"인 것들만  */
+        form>.row>input[type="text"],
+        form>.row>input[type="password"],
+        form>.row>select {
+            height: 100%;
+            width: 100%;
+            /* input 눌렀을 때 진하게 박스가 잡힘 -> outline */
+            outline: none;
+            border-radius: 0;
+            border: 1px solid gray;
+        }
+
+        .top-header {
+            /* row를 먼저 지정해서 height가 잡히지 않아 !important */
+            height: 5px !important;
+            background-color: black !important;
+        }
+        .title{
+            margin-bottom:50px !important;
+            border-bottom:1px solid lightgray;
+            padding-bottom:10px;
+        }
+        .title>h1{
+            width:100%;
+            text-align:center;
+            font-size:2rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--  -->
+    <form action="/test.jsp" method="post">
+        <div class="row top-header">
+
+        </div>
+        <div class="row title">
+            <h1>회원가입</h1>
+        </div>
+        <div class="row">
+            <label>아이디</label>
+            <input name="userid" type="text" />
+            <a class="btn" href="javascript:void(0)">중복확인</a>
+        </div>
+        <div class="row">
+            <label>비밀번호</label>
+            <input name="password" type="password" />
+        </div>
+        <div class="row">
+            <label>비밀번호확인</label>
+            <input name="re-password" type="password" />
+        </div>
+        <div class="row">
+            <label>이름</label>
+            <input name="username" type="text" />
+        </div>
+        <div class="row">
+            <label>우편번호</label>
+            <input name="zipcode" type="text" />
+            <a class="btn" href="javascript:void(0)">검색</a>
+        </div>
+        <div class="row">
+            <label>기본주소</label>
+            <input name="addr1" type="text" />
+        </div>
+        <div class="row">
+            <label>상세주소</label>
+            <input name="addr2" type="text" />
+        </div>
+        <div class="row">
+            <label>휴대전화</label>
+            <select name="" id="">
+                <option value="" selected>010</option>
+                <option value="">011</option>
+            </select>
+            <input name="" type="text" />
+            <input name="" type="text" />
+        </div>
+        <div class="row">
+            <label>연락처</label>
+            <select name="" id="">
+                <option value="" selected>02</option>
+                <option value="">053</option>
+                <option value="">055</option>
+            </select>
+            <input name="" type="text" />
+            <input name="" type="text" />
+        </div>
+        <div class="row">
+            <label>이메일</label>
+            <input name="" type="text" />
+            <select name="" id="">
+                <option value="" selected>@naver.com</option>
+                <option value="">@gmail.com</option>
+                <option value="">@outlook.co.kr</option>
+            </select>
+        </div>
+        <div class="row">
+            <label>생년월일</label>
+            <input name="birth" type="radio" /> 양력
+            <input name="birth" type="radio" /> 음력
+        </div>
+        <div class="row">
+            <select>
+                <option value="" selected>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+            <select>
+                <option value="" selected>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+            <select>
+                <option value="" selected>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <hr />
+        <div class="row">
+            <input id="email-recv" type="checkbox" />
+            <label for="email-recv">이메일 수신에 동의합니다.</label>
+        </div>
+        <div class="row">
+            <input id="sms-recv" type="checkbox" />
+            <label for="sms-recv">SMS 수신에 동의합니다.</label>
+        </div>
+        <div class="row">
+            <input class="btn btn-submit" type="submit" value="회원가입" />
+        </div>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    form : 사용자로부터 특정정보를 받아 서버로 전달하는데 사용되는 태그
+    action Attribute : 전달받는 서버 URI
+    method Attribute : 서버로 요청하는 방식
+        - GET : 사용자 요청 정보를 Query String으로 전달(Default)
+        - POST : 사용자 요청 정보를 Request body(Payload)로 전달
+        - PUT : 자원의 전체 수정을 위해 사용. Request Body를 통해 데이터 전달
+        - PATH : 자원의 일부 수정을 위해 사용. Request Body에 변경할 일부 필드만 포함
+        - DELETE : 지정된 자원을 삭제 요청. 일반적으로 Body없이 URI만으로 식별
+    -->
+    <form action="/test.jsp" method="post">
+        <div>
+            <!-- input type="text"(default) : 입력 받을 수 있는 상태로 -->
+            <label>아이디</label>
+            <input name="userid" type="text" />
+            <a href="javascript:void(0)">중복확인</a>
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input name="password" type="password" />
+        </div>
+        <div>
+            <label>비밀번호확인</label>
+            <input name="re-password" type="password" />
+        </div>
+        <div>
+            <label>이름</label>
+            <input name="username" type="text" />
+        </div>
+        <div>
+            <label>우편번호</label>
+            <input name="zipcode" type="text" />
+            <a href="javascript:void(0)">검색</a>
+        </div>
+        <div>
+            <label>기본주소</label>
+            <input name="addr1" type="text" />
+        </div>
+        <div>
+            <label>상세주소</label>
+            <input name="addr2" type="text" />
+        </div>
+        <div>
+            <label>휴대전화</label>
+            <select name="" id="">
+                <option value="" selected>010</option>
+                <option value="">011</option>
+            </select>
+            <input name="" type="text" />
+            <input name="" type="text" />
+        </div>
+        <div>
+            <label>연락처</label>
+            <select name="" id="">
+                <option value="" selected>02</option>
+                <option value="">053</option>
+                <option value="">055</option>
+            </select>
+            <input name="" type="text" />
+            <input name="" type="text" />
+        </div>
+        <div>
+            <label>이메일</label>
+            <input name="" type="text" />
+            <select name="" id="">
+                <option value="" selected>@naver.com</option>
+                <option value="">@gmail.com</option>
+                <option value="">@outlook.co.kr</option>
+            </select>
+        </div>
+        <div>
+            <label>생년월일</label>
+            <!-- radio버튼에서 name 지정할 때 택일인 경우 동일한 name 지정 -->
+            <input name="birth" type="radio" /> 양력
+            <input name="birth" type="radio" /> 음력
+        </div>
+        <div>
+            <select>
+                <option value="" selected>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+            <select>
+                <option value="" selected>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+            <select>
+                <option value="" selected>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <hr />
+        <div>
+            <input id="email-recv" type="checkbox" /> 
+            <label for="email-recv">이메일 수신에 동의합니다.</label>
+            <!-- input id와 label for 이름이 일치 -->
+        </div>
+        <div>
+            <input id="sms-recv" type="checkbox" /> 
+            <label for="sms-recv">SMS 수신에 동의합니다.</label>
+        </div>
+        <div>
+            <!-- type="submit" : 서버에 전달 -->
+            <input type="submit" value="회원가입" />
+        </div>
+
+    </form>
+</body>
+
+</html>
