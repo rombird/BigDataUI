@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box;}
+
+        /* input[type="checkbox"]에서 체크박스 스타일 -> 잘 안됨 */
+        /* width, height 적용 O, background-color 적용 X */
+        input[type="checkbox"]{
+            width:150px;
+            height:150px;
+            background-color:orange;
+            /* checkbox가 보여지지않음  */
+            display:none;
+        }
+        /* 체크버튼 누르지 않은 상태에서 label 상태 */
+        input[type="checkbox"]+label{
+            /* inline안에 위치해있으면서 block을 잡아줌 */
+            display:inline-block;
+            width:100px;
+            height:100px;
+            border:1px solid;
+            background-image:url("./icon_off.svg");
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:45px 45px;
+            background-color:aliceblue;
+        }
+        /* 체크가 되어있는 상태에서 label에 대한 style 지정 -> input[type="checkbox"]의 display:none; 커스텀하게 체크박스 만들기 */
+        input[type="checkbox"]:checked+label{
+            background-color:lightgray;
+            background-image:url("./icon_on.svg");
+            /* background-repeat 지정 X -> 이모티콘 많이 생성 */
+            background-repeat:no-repeat;
+            /* 가운데로 배치 */
+            background-position:center;
+            background-size:45px 45px;
+            background-color:brown;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- label의 for == input의 id -> 글자만 눌러도 체크됨 -->
+    <div class="chk-block">
+        <input type="checkbox" id="chk">
+        <label class="check-label" for="chk"></label>
+        <span>체크박스</span>
+    </div>
+</body>
+</html>
