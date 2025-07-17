@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  */
+        *{box-sizing: border-box;}
+        body{
+            margin : 0;
+        }
+        .wrapper{
+            width : 1280px;
+            height : 1080px;
+            margin : 0 auto;
+            border : 1px solid;
+            padding : 10px;
+        }
+        .parent{
+            height : 350px;
+            border : 1px solid;
+            /* display:flex; 가로배치 */
+            display: flex;
+            /*  
+                수평배치 center,right,left, end
+                space-between : 1번과 5번 양 옆에는 여백 없이
+                space-evenly : 1번과 5번 양옆에도 여백 동등하게
+                space-around : 1번과 5번 양옆에 여백, 사이 간격과 동등하지는 X 
+            */
+            justify-content:center;
+            /* 1 ~ 5 번 item간 여백지정없는 설정시 gap option 사용가능  */
+            gap:0px;
+            /* 수직배치 start,end,center,flex-start,flex-end */
+            /* flex-direction:row; 일때  
+            align-items 사용 -> 가지고 있는 크기만큼 height가 변경됨 */
+            align-items:center;
+            /* 방향지정 : row, column, row-reverse(역순), column-reverse*/
+            flex-direction:row;
+            /* row면 수평축에 대한 배치 -> justify-content 옵션 다르게 작용하는거 확인
+            column이면 수직축에 대한 배치 -> justify-content 옵션 다르게 작용하는거 확인 */
+        }   
+
+        .parent>.child{
+            width : 120px;
+            /* height : 40px; */
+            border : 1px solid;
+        }
+        .parent2{
+            border:1px solid;
+            display:flex;
+            /* display 적용하자마자 .child2에 있는 width, height 작용 X */
+            /* wrap, nowrap(다음줄로 이동??) */
+            flex-wrap:wrap;
+            justify-content:center;
+            align-items:center;
+            gap:10px;
+        }
+        .parent2>.child2{
+            width:200px;
+            height:200px;
+            border:1px solid;
+            background-color:wheat;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="parent">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+        </div>
+
+        <div class="parent2">
+            <div class="child2">1</div>
+            <div class="child2">2</div>
+            <div class="child2">3</div>
+            <div class="child2">4</div>
+            <div class="child2">5</div>
+            <div class="child2">6</div>
+            <div class="child2">7</div>
+            <div class="child2">8</div>
+            <div class="child2">9</div>
+            <div class="child2">10</div>
+            <div class="child2">11</div>
+            <div class="child2">12</div>
+            <div class="child2">13</div>
+            <div class="child2">14</div>
+            <div class="child2">15</div>
+            <div class="child2">16</div>
+            <div class="child2">17</div>
+            <div class="child2">18</div>
+            <div class="child2">19</div>
+            <div class="child2">20</div>
+        </div>
+    </div>
+
+</body>
+</html>

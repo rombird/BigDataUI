@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            margin: 0;
-        }
+        body {margin: 0;}
 
         div {
             width: 300px;
@@ -34,9 +32,9 @@
             margin-right: 40px;
         }
 
-        .d2 {
+        /* .d2 {
             margin: 0 auto;
-        }
+        } */
 
         /* son박스를 parent의 중심에 위치하도록 */
         .parent {
@@ -64,7 +62,7 @@
             top: 0;
             bottom: 0;
             margin: auto;
-            /* 부모가 움직이더라도 가운데정렬됨 */
+            /* 부모가 움직이더라도 가운데정렬됨  */
         }
 
         /* 가운데 맞추기 */
@@ -78,16 +76,17 @@
 
 <body>
     <div class="d1">HELLOWORLD</div>
-    <!-- <div class="d2">HELLOWORLD</div> -->
-    <div class="parent p1">
+
+    <div class="parent p1"> 
         <div class="son s1"></div>
         <div class="son"></div>
         <!-- 새로 div가 생겨도 그 위치를 고수 -->
     </div>
+    
 
     <div class="parent p2">
         <div class="son s2"></div>
-        <div class="son"></div>
+        <!-- <div class="son"></div> -->
         <!-- 추가된것도 같이 배치됨 -->
     </div>
 </body>
