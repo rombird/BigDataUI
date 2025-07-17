@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing:border-box;}
+        body{margin:0;}
+        .sitemenu{
+            padding:20px;
+            position:relative;
+        }
+        .sitemenu>input[type="checkbox"]{display:none;}
+        .sitemenu>label{}
+
+        /* span클릭하면 checkbox 눌러짐 */
+        .sitemenu>label>span{
+            display:block;
+            width:35px;
+            height:2px;
+            background-color:black;
+            /* margin해줘야 서로 띄워짐 */
+            margin:8px;
+            transition:.3s;
+        }
+        /* checkbox를 클릭했을 때 X로 바꿔주기 */
+        .sitemenu>input[type="checkbox"]:checked+label>span:nth-child(1){
+            transform:translate(0px,10px) rotate(45deg);
+        }
+        .sitemenu>input[type="checkbox"]:checked+label>span:nth-child(2){
+            /* 투명도 0 */
+            opacity:0;
+        }
+        .sitemenu>input[type="checkbox"]:checked+label>span:nth-child(3){
+            transform:translate(0px,-10px) rotate(-45deg);
+        }
+
+        .site-block{
+            width:0;
+            height:0;
+            margin-top:25px;
+            
+            position:absolute;
+            top:70px;
+        }
+        /* 체크하게 되면 메뉴 전체(site-block) 다보여주도록 */
+        
+        .sitemenu>input[type="checkbox"]:checked~.site-block{
+            /* site-block에서 width, height : 0 을 해주면 */
+            width:95%;
+            height:500px;
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="sitemenu">
+        <input type="checkbox" id="chk">
+        <label for="chk">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="site-block">
+
+        </div>
+    </div>
+</body>
+</html>
