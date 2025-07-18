@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>BTN</button>
+    <a>BTN2</a>
+    <input type="submit" value="BTN3"/>
+    <hr/>
+
+    <div class="btn" style="width:80px;padding:10px;border:1px solid;">DIV's BTN</div>
+
+    <script>
+        const btnE1 = document.querySelector('.btn');
+        let state = false;
+        // btnE1.addEventListener('이벤트 종류', '수행로직'); -> 콜백함수(수행로직을 전달하는 함수)
+        btnE1.addEventListener('click', ()=>{
+            // alert('클릭됨!!');
+
+            if(state){
+                btnE1.style.backgroundColor='white';
+                btnE1.style.color='black';
+                state = false;
+            }else{
+                btnE1.style.backgroundColor='black';
+                btnE1.style.color='white';
+                state = true;
+            }
+                
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- d1의 내용을 찾아서 ABCD로 -->
+    <button onClick="document.getElementById('d1').innerHTML='ABCD'">CHANGE</button>
+    <!-- script에 의해서 내용 바뀌게 됨 -> 삭제됨-->
+    <div id="d1">HELLO WORLD</div>
+
+    <script>
+        // 특정 요소 탐색, 내용 확인/수정/삭제 가능
+        // const d1E1 = document.getElementById("d1");
+        // d1E1.innerHTML = "ABCD";
+    </script>
+</body>
+</html>

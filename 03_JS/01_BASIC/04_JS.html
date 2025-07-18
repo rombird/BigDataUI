@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // number
+        console.log(typeof 10);
+        console.log(typeof 10.5);
+
+        // string - ` (백틱도 string 인정)
+        console.log(typeof 'hello');
+        console.log(typeof "hello");
+        console.log(typeof `hello`);
+
+        // object : {key:value, key:value}
+        // {"name":"홍길동", "age":"30", "addr":"대구"}
+        console.log(typeof {});
+        console.log(typeof {"name":"홍길동", "age":"30", "addr":"대구"});
+        console.log(typeof []);
+
+        // null
+        // 변수 초기화(공간형성 + 기본값 삽입 - 개발자가 의도한 값)
+        // javascript에서는 공간은 있고 값은 없는 상태(java랑 다르게 취급)
+        // null -> object로 분류
+        console.log("------------")
+        let vol = null;
+        console.log(vol);
+        console.log(typeof vol); 
+        console.log("------------")
+
+        // undefined: 공간형성O, X -> 기본값은 생략되어진 상태 - 개발자가 의도하지 못한 예외
+        // javascript에서 아무것도 없는 상태
+        let vol2;
+        console.log(vol2);
+        
+        // boolean
+        console.log(typeof true);
+
+    </script>
+</body>
+</html>
