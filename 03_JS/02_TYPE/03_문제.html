@@ -35,28 +35,28 @@
             평균: 0,
             save국어: function () {
                 const 국어input = document.querySelector('.korea');
-                myScore.국어 = `${국어input.value}`;
-                console.log('국어점수 : ', myScore.국어); 
+                this.국어 = 국어input.value;
+                console.log('국어점수 : ', 국어input.value); 
             },
             save영어: function () {
                 const 영어input = document.querySelector('.english');
-                myScore.영어 = 영어input.value;
+                this.영어 = 영어input.value;
                 console.log('영어점수 : ', 영어input.value);
             },
             save수학: function () {
                 const 수학input = document.querySelector('.math');
-                myScore.수학 = 수학input.value;
+                this.수학 = 수학input.value;
                 console.log('수학점수 : ', 수학input.value);
             },
             sum: function () {
-                myScore.총점 = Number(this.국어) + Number(this.영어) + Number(this.수학);
                 const sumBlock = document.querySelector('.sum-block');
+                this.총점 = Number(this.국어) + Number(this.영어) + Number(this.수학);
                 sumBlock.innerHTML = this.총점;
                 console.log('총점 : ', this.총점);
             },
             avg: function () {
-                myScore.평균 = Number(this.총점)/3;
                 const sumBlock = document.querySelector('.avg-block');
+                this.평균 = Number(this.총점)/3;
                 sumBlock.innerHTML = this.평균;
                 console.log('평균 : ', this.평균);
             },
