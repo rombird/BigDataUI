@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {}
+
+        .layoutCenter{
+            width:1280px;
+            margin:0 auto;
+            padding:10px;
+        }
+
+        .outer-wrapper {
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        p {
+            margin: 0;
+        }
+
+       
+        @font-face {
+            font-family: 'logo-font';
+            src: url('./BnviitLasik.ttf');
+            font-style: normal;
+        }
+
+        /* -------------------------------------------------------------------- */
+        /* main */
+        .outer-wrapper>main {
+            display: flex;
+        }
+
+        /* main - section1 */
+        .outer-wrapper>main>.mainLeft>.section1 {
+            width: 830px;
+            /* height 너무 길어서 임의로 잡아둠 - 13180px */
+            /* height: 3000px; */
+            /* border:1px solid; */
+        }
+
+        /* section1 - summary */
+        .outer-wrapper>main>.mainLeft>.section1>.summary {
+            width: 830px;
+            height: 665px;
+            /* border: 1px solid; */
+            padding-bottom: 6.5rem;
+
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-top {
+            width: 100%;
+            height: 110px;
+            /* border:1px solid; */
+            margin-top: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-top>h2 {
+            margin: 0px 10px;
+            padding: 0px;
+            height: 39px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-top>div {
+            margin: 5px 10px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body {
+            display: flex;
+
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.poster-box>img {
+            width: 300px;
+            height: 400px;
+            background-color: lightgray;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.poster-box>div {}
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info {
+            width: 505px;
+            height: 414px;
+            /* border:1px solid; */
+            margin-left: 30px;
+            display: inline-block;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li {
+            width: 505px;
+            /* font-size:15px; */
+            /* border:1px solid; */
+            display: flex;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>strong {
+            width: 90px;
+            height: 25px;
+            margin: 10px 10px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>a {
+            line-height: 2.6rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>p {
+            height: 25px;
+            margin: 0;
+            line-height: 2.6rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-price {
+            margin: 0;
+            height: 101px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-price>a {
+            line-height: 3rem;
+            /* border:1px solid; */
+
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-price>p {
+            height: 20px;
+            margin: 5px 0;
+            font-size: 13px;
+            line-height: 1rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-benefit {
+            display: flex;
+            flex-direction: column;
+            /* height:25px; */
+
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-benefit>a {
+            margin: .4rem 0;
+            font-size: 13px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.info>.info-li>.info-li-benefit>a:nth-child(1) {
+            font-size: 16px;
+        }
+
+        /* main-product-body */
+        .outer-wrapper>main>.mainLeft>.section1>.product-body {
+            width: 830px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-body>.nav {
+            height: 70px;
+            border-bottom: 0.1rem solid #b6bdc7;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-body>.nav>.product-nav {
+            display: flex;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-body>.nav>.product-nav>li {
+            height: 57px;
+            margin-left: 1.8rem;
+            line-height: 2.5rem;
+            /* display:inline-block; */
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-body>.nav>.product-nav>li:nth-child(1) {
+            margin: 0;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-body>.nav>.product-nav>li>a {
+            display: block;
+            padding: 1.6rem 1rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content {}
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting {
+            height: 316px;
+            /* border:1px solid; */
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting {
+            /* background-color:rgb(199, 199, 232); */
+            margin-top: 2rem;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting>.casting-ul {
+            display: flex;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting>.casting-ul>.casting-li {
+            width: 101px;
+            height: 152px;
+            margin: 0.1rem 3rem 3rem 0;
+            text-align: center;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting>.casting-ul>.casting-li>.casting-img>img {
+            width: 95px;
+            height: 95px;
+            background-color: lightgray;
+            border-radius: 50px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting>.casting-plus {
+            width: 830px;
+            height: 50px;
+            border: 1px solid;
+            display: block;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .outer-wrapper>main>.mainLeft>.section1>.product-content>.contetn>img {
+            width: 750px;
+        }
+
+
+        /* main-section2 */
+        .outer-wrapper>main>.mainRight>.section2-side {
+            margin:0 15px;
+            width: 370px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain{}
+
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate{
+            margin:40px 0;
+            border:1px solid;
+            border-radius:15px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideHeader{
+            margin:0 20px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender{
+            width:330px;
+            margin:0 20px;
+            height:480px;
+            border-radius:10px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.nav{
+            margin:15px 0;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.nav>.material-icons{
+            border:none;
+            margin:0 30px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.nav>.current-date{
+            font-weight:600;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>ul{
+            display:flex;
+            flex-wrap:wrap;
+            text-align:center;
+        }
+
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>ul>li{
+            width:calc(100% / 7);
+            position:relative;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.weeks{
+            height:27px;
+            border-radius:15px;
+            border:none;
+            background-color:#f2f2f2;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.weeks>li{
+            font-weight:500;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days{
+            margin-bottom:20px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li{
+            z-index:1;
+            margin-top:20px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>.inactivate{
+            color:#aaa;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li.activate{
+            color:#fff;
+        }
+
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li::before{
+            position:absolute;
+            content:'';
+            height:40px;
+            width:40px;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            border-radius:50%;
+            z-index:-1;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li:hover::before{
+            background:#f2f2f2;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li.active::before{
+            background:#008aff;
+        }
+
+
+        /* footer */
+
+        footer>.footnav {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+        }
+
+        footer>.footnav>li {
+            font-size: 0.9rem;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown>.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid lightgray;
+            border-radius: 15px;
+            padding: 5px 0;
+            list-style: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown>.dropdown-menu>li {
+            padding: 5px 20px;
+
+        }
+
+        .dropdown>.dropdown-menu>li>a {
+            text-decoration: none;
+            color: black;
+            white-space: nowrap;
+
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+
+
+
+        footer>.footnav>li>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        footer>.footnav>li>span {
+            user-select: none;
+        }
+
+        footer>.footnav>li:nth-child(5) {
+            font-weight: 700;
+        }
+
+
+        footer>.footmain {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 30px;
+            justify-content: space-between;
+            display: flex;
+
+        }
+
+        footer>.footmain>.footsection {
+            font-size: 12px;
+        }
+
+
+        footer>.footbar {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 30px;
+            font-size: 0.7rem;
+            text-align: left;
+            color: gray;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-wrapper ">
+        <header class="layoutCenter">
+            <div class="mainheader-wrapper layout-01">
+                <div class="main-header">
+                    <a href="" class="main-logo">NOL outerpark</a>
+                    <form class="search">
+                        <input class="search-text" type="text" placeholder=" 놀기 좋은 여름, 혜택을 놀랍게">
+                        <button type="submit"><img class="submit-img" src="이미지/돋보기.svg" alt=""></button>
+                    </form>
+                    <div class="event"><img style="width: 180px; height: 50px;" src="이미지/헤더.png" alt=""></div>
+                    <div class="page-change">
+                        <a href="">NOL</a>
+                        <a href="">TRIPLE</a>
+                        <a href="">outerpark Global</a>
+                    </div>
+                </div>
+                <div class="sub-header">
+                    <ul class="service-menu">
+                        <li><a href="">홈</a></li>
+                        <li><a href="">투어</a></li>
+                        <li><a href="">티켓</a></li>
+                    </ul>
+                    <ul class="service">
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">내 예약</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subheader-wrapper layout-01">
+                <div class="menu-header">
+                    <ul class="category-menu1">
+                        <li><a href="">뮤지컬</a></li>
+                        <li><a href="">콘서트</a></li>
+                        <li><a href="">스포츠</a></li>
+                        <li><a href="">전시/행사</a></li>
+                        <li><a href="">클래식/무용</a></li>
+                        <li><a href="">아동/가족</a></li>
+                        <li><a href="">연극</a></li>
+                        <li><a href="">레저/캠핑</a></li>
+                        <li><a href="">토핑</a></li>
+                        <li><a href="">MD shop</a></li>
+                    </ul>
+                    <ul class="category-menu2">
+                        <li><a href="">랭킹</a></li>
+                        <li><a href="">오픈예정</a></li>
+                        <li><a href="">지역별</a></li>
+                        <li><a href="">공연장</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </header>
+        <main class="layoutCenter">
+            <div class="mainLeft layout-01">
+                <section class="section1">
+                    <div class="summary">
+                        <div class="summary-top">
+                            <div>단독판매</div>
+                            <h2>연극 <나의 아저씨>
+                            </h2>
+                            <div>연극 주간 15위</div>
+                        </div>
+                        <div class="summary-body">
+                            <div class="poster-box">
+                                <img src="이미지/나의아저씨포스터.gif" alt="">
+                                <div>♡티켓캐스트 239</div>
+                            </div>
+                            <ul class="info">
+                                <li class="info-li">
+                                    <strong>장소</strong>
+                                    <a href="">LG아트센터 서울 U+ 스테이지▶</a>
+                                </li>
+                                <li class="info-li">
+                                    <strong>공연기간</strong>
+                                    <p>2025.08.22 ~ 2025.09.27</p>
+                                </li>
+                                <li class="info-li">
+                                    <strong>공연시간</strong>
+                                    <p>150분</p>
+                                </li>
+                                <li class="info-li">
+                                    <strong>관람연령</strong>
+                                    <p>14세 이상 관람가</p>
+                                </li>
+                                <li class="info-li">
+                                    <strong>가격</strong>
+                                    <div class="info-li-price">
+                                        <a href="">전체가격보기▶</a>
+                                        <p>R석 77,000원</p>
+                                        <p>발코니석 55,000원</p>
+                                    </div>
+
+                                </li>
+                                <li class="info-li">
+                                    <strong>혜택</strong>
+                                    <div class="info-li-benefit">
+                                        <a href="">무이자할부▶</a>
+                                        <a href="">NOL포인트 10% 적립받기 > </a>
+                                        <a href="">가입하고 중복할인 쿠폰받기 > </a>
+
+                                    </div>
+
+                                </li>
+                                <li class="info-li">
+                                    <strong>프로모션</strong>
+                                    <a href="">선착순 350명 5만원이상 결제시 3천원 즉시할인 > </a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="product-body">
+                        <nav class="nav">
+                            <ul class="product-nav">
+                                <li><a href="">공연정보</a></li>
+                                <li><a href="">판매정보</a></li>
+                                <li><a href="">관람후기(0)</a></li>
+                                <li><a href="">기대평(57)</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="product-content">
+                        <div class="content-casting">
+                            <h3>캐스팅</h3>
+                            <div class="casting">
+                                <ul class="casting-ul">
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공1.gif" alt=""></a>
+                                        <p>박동훈</p>
+                                        <p>이동하</p>
+                                    </li>
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공2.gif" alt=""></a>
+                                        <p>박동훈</p>
+                                        <p>박은석</p>
+                                    </li>
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공3.gif" alt=""></a>
+                                        <p>이지안</p>
+                                        <p>김현수</p>
+                                    </li>
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공4.gif" alt=""></a>
+                                        <p>이지안</p>
+                                        <p>홍예지</p>
+                                    </li>
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공5.gif" alt=""></a>
+                                        <p>도준영</p>
+                                        <p>이규한</p>
+                                    </li>
+                                    <li class="casting-li">
+                                        <a class="casting-img" href=""><img src="이미지/주인공6.gif" alt=""></a>
+                                        <p>도준영</p>
+                                        <p>윤선우</p>
+                                    </li>
+
+                                </ul>
+                                <a class="casting-plus" href="">더보기</a>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <div class="">
+                                <h3>공지사항</h3>
+                                <img src="이미지/공지사항.jpg" alt="" style="width:750px;">
+                                <br>
+                                <br>
+                                <img src="이미지/좌석정보.jpg" alt="" style="width:750px;">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>할인정보</h3>
+                            <img src="이미지/할인정보.jpg" alt="" style="width:750px;">
+                        </div>
+                        <div class="content">
+                            <h3>공연상세 / 캐스팅일정</h3>
+                            <img src="이미지/공연상세.jpg" alt="" style="width:750px;">
+                        </div>
+                        <div class="content">
+                            <div>
+                                <span>연극 <나의 아저씨></span>
+                                <span>더 알아보기</span>
+                            </div>
+                            <span>공연 홈 바로가기 > </span>
+                            <div>
+                                <img>
+                                <span>등장인물/출연진 모아보기</span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+            <div class="mainRight">
+                <section class="section2-side">
+                    <div class="sideMain">
+                        <div class="sideMainDate">
+                            <div class="sideHeader">
+                                <h4>관람일</h4>
+                            </div>
+                            <div class="sideCalender">
+                                <div class="nav">
+                                    <button class="material-icons"><img src="이미지/left.svg" alt=""></button>
+                                    <p class="current-date">2025. 08</p>
+                                    <button class="material-icons"><img src="이미지/right.svg" alt=""></button>
+                                </div>
+                                <div class="Calender">
+                                    <ul class="weeks">
+                                        <li>Sun</li>
+                                        <li>Mon</li>
+                                        <li>Tue</li>
+                                        <li>Wed</li>
+                                        <li>Thu</li>
+                                        <li>Fri</li>
+                                        <li>Sat</li>
+                                    </ul>
+                                    <ul class="days">
+                                        <li class="inactivate">27</li>
+                                        <li class="inactivate">28</li>
+                                        <li class="inactivate">29</li>
+                                        <li class="inactivate">30</li>
+                                        <li class="inactivate">31</li>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>10</li>
+                                        <li>11</li>
+                                        <li>12</li>
+                                        <li>13</li>
+                                        <li>14</li>
+                                        <li>15</li>
+                                        <li>16</li>
+                                        <li>17</li>
+                                        <li>18</li>
+                                        <li>19</li>
+                                        <li>20</li>
+                                        <li>21</li>
+                                        <li>22</li>
+                                        <li>23</li>
+                                        <li>24</li>
+                                        <li>25</li>
+                                        <li>26</li>
+                                        <li>27</li>
+                                        <li>28</li>
+                                        <li>29</li>
+                                        <li>30</li>
+                                        <li>31</li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sideMainRound">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="sideBtnMain">
+
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class=".layoutCenter">
+            <ul class="footnav">
+                <li><a href="javascript:void(0)">회사소개</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">위치기반서비스 이용약관</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">여행약관</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">여행자보험 가입내역</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">티켓판매내역</a></li>
+                <span>|</span>
+                <li><a href="javascript:void(0)">공지사항</a></li>
+                <span>|</span>
+                <li class="dropdown"><a href="javascript:void(0)">고객센터&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0)">투어 고객센터</a></li>
+                        <li><a href="javascript:void(0)">티켓 고객센터</a></li>
+                    </ul>
+                </li>
+                <span>|</span>
+                <li class="dropdown"><a href="javascript:void(0)">Language&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0)">Korean</a></li>
+                        <li><a href="javascript:void(0)">English</a></li>
+                        <li><a href="javascript:void(0)">Japanese</a></li>
+                        <li><a href="javascript:void(0)">Chinese</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <hr />
+            <div class="footmain">
+                <div class="footsection">
+                    <h2>(주)놀유니버스</h2>
+                    <p>주소 대구광역시 중구 중앙대로 366 9층,10층<br />사업자등록번호 010-75-74510<br />통신판매업신고 2024-대구수정-0912<br />관광사업증 등록번호
+                        : 제2025-000025호<br />호스팅 서비스 제공자 (주)놀유니버스 | 대표이사 김홍섭</p>
+                </div>
+                <div class="footsection">
+                    <h2>고객센터</h2>
+                    <p>투어 1588-4334 | 티켓 1544-5551<br />팩스 02-830-7777 | 이메일 fdsa5104@gmail.com<br />해외항공 02-3456-7899 |
+                        국내항공 02-9876-5432<br />투어 1:1 문의 | 티켓 1:1 문의</p>
+                </div>
+                <div class="footsection">
+                    <h2>전자금융거래 분쟁처리 담당정보</h2>
+                    <p>투어 1588-4334 | 티켓 1544-5551<br />팩스 02-830-7777 | 이메일 fdsa5104@gmail.com<br />개인정보책임자 이메일@또적어야해
+                    </p>
+                </div>
+            </div>
+            <div class="footbar">
+                <p>(주)놀유니버스는 일부 상품의 통신판매중개자로서 통신판매의 당사자가 아니므로, 상품의 예약, 이용 및 환불 등 거래와 관련된 의무와 책임은 판매자에게 있으며 (주) 놀유니버스는 일체
+                    책임을 지지 않습니다.</p>
+                <p>ⓒ Nol Universe Co., Ltd. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

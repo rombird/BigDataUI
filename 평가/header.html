@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {}
+
+        .layoutCenter {
+            width: 1280px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .outer-wrapper {
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: 'logo-font';
+            src: url('./BnviitLasik.ttf');
+            font-style: normal;
+        }
+
+        /* header */
+        .outer-wrapper>header>.mainheader-wrapper {}
+
+        /* main-header */
+        .outer-wrapper>header>.mainheader-wrapper>.main-header {
+            width: 100%;
+            height: 70px;
+            /* margin:0 278px; */
+            padding: 0 20px;
+            /* border: 1px solid; */
+            display: flex;
+            align-items: center;
+
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.main-logo {
+            width: 144px;
+            margin: 0px 12px 0px 0px;
+            color: rgb(6, 6, 183);
+            font-family: 'logo-font';
+            font-size: 16px;
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.search {
+            width: 354px;
+            height: 46px;
+            border: 1px solid;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.search>button>.submit-img {
+            width: 20px;
+            height: 46px;
+            outline: none;
+            background: none;
+            border: none;
+
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.search>.search-text {
+            width: 310px;
+            height: 44px;
+            outline: none;
+            background: none;
+            border: none;
+        }
+
+
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.event {
+            width: 180px;
+            height: 50px;
+            /* border: 1px solid; */
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.page-change {
+            /* border:1px solid; */
+            margin-left: 260px;
+            font-family: 'logo-font';
+            font-size: 12px;
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.main-header>.page-change>a {
+            margin: 0 10px;
+        }
+
+        /* sub-header */
+        .outer-wrapper>header>.mainheader-wrapper>.sub-header {
+            width: 100%;
+            height: 54px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .outer-wrapper>header>.mainheader-wrapper>.sub-header>.service-menu {
+            display: flex;
+            /* border:1px solid; */
+            width: 184px;
+            height: 100%;
+            align-items: center;
+            font-size: 20px
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.sub-header>.service-menu>li {
+            width: 48px;
+            height: 100%;
+            margin: 0 10px;
+            text-align: center;
+            /* border:1px solid; */
+
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.sub-header>.service {
+            width: 150px;
+            height: 100%;
+            display: flex;
+            margin: 0 0 0 900px;
+            justify-content: space-between;
+            /* border:1px solid; */
+
+        }
+
+        .outer-wrapper>header>.mainheader-wrapper>.sub-header>.service>li {
+            width: 50px;
+            height: 100%;
+        }
+
+        /* category-header */
+        .outer-wrapper>header>.subheader-wrapper {
+            /* width:100%; */
+            height: 58px;
+            /* border: 1px solid; */
+            background-color: #fbfbfb;
+            border-top: 0.1rem solid #b6bdc7;
+
+        }
+
+        .outer-wrapper>header>.subheader-wrapper>.menu-header {
+            padding: 15px;
+            display: flex;
+            /* border:1px solid; */
+            align-items: center;
+        }
+
+        .outer-wrapper>header>.subheader-wrapper>.menu-header>.category-menu1 {
+            width: 804px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            /* border:1px solid; */
+            justify-content: space-between;
+        }
+
+        .outer-wrapper>header>.subheader-wrapper>.menu-header>.category-menu1>li {
+            margin: 0 8px;
+        }
+
+        .outer-wrapper>header>.subheader-wrapper>.menu-header>.category-menu2 {
+            width: 290px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* border:1px solid; */
+            margin: 0 0 0 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-wrapper">
+        <header class="">
+            <div class="mainheader-wrapper ">
+                <div class="main-header layoutCenter">
+                    <a href="" class="main-logo">NOL outerpark</a>
+                    <form class="search">
+                        <input class="search-text" type="text" placeholder=" 놀기 좋은 여름, 혜택을 놀랍게">
+                        <button type="submit"><img class="submit-img" src="이미지/돋보기.svg" alt=""></button>
+                    </form>
+                    <div class="event"><img style="width: 180px; height: 50px;" src="이미지/헤더.png" alt=""></div>
+                    <div class="page-change">
+                        <a href="">NOL</a>
+                        <a href="">TRIPLE</a>
+                        <a href="">outerpark Global</a>
+                    </div>
+                </div>
+                <div class="sub-header layoutCenter">
+                    <ul class="service-menu">
+                        <li><a href="">홈</a></li>
+                        <li><a href="">투어</a></li>
+                        <li><a href="">티켓</a></li>
+                    </ul>
+                    <ul class="service">
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">내 예약</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subheader-wrapper">
+                <div class="menu-header">
+                    <ul class="category-menu1">
+                        <li><a href="">뮤지컬</a></li>
+                        <li><a href="">콘서트</a></li>
+                        <li><a href="">스포츠</a></li>
+                        <li><a href="">전시/행사</a></li>
+                        <li><a href="">클래식/무용</a></li>
+                        <li><a href="">아동/가족</a></li>
+                        <li><a href="">연극</a></li>
+                        <li><a href="">레저/캠핑</a></li>
+                        <li><a href="">토핑</a></li>
+                        <li><a href="">MD shop</a></li>
+                    </ul>
+                    <ul class="category-menu2">
+                        <li><a href="">랭킹</a></li>
+                        <li><a href="">오픈예정</a></li>
+                        <li><a href="">지역별</a></li>
+                        <li><a href="">공연장</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </header>
+    </div>
+</body>
+
+</html>

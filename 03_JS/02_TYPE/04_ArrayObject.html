@@ -11,7 +11,7 @@
     <script>
         // 배열 : 여러 자료 type을 저장하기 위한 자료구조
         // 서로 다른 type의 자료형도 한 배열안에 담을 수 있다
-        // let arr=['str1', "str2", `str3`, null, true, false, undefined, {name:"홍길동", age:15}];
+        let arr=['str1', "str2", `str3`, null, true, false, undefined, {name:"홍길동", age:15}];
         // console.log(arr);
         // console.log(typeof arr[0]);
         // console.log(typeof arr[1]);
@@ -23,10 +23,10 @@
         // console.log(typeof arr[7]);
 
         // arr[8] = 100;
-        // console.log(arr);
+        // // console.log(arr);
         // arr[10] = "HELLO WORLD";
         // console.log(arr);
-        // 9번 인덱스가 없어도 undefined로 지정돼서 저장됨
+        // // 9번 인덱스가 없어도 undefined로 지정돼서 저장됨
         // console.log(typeof arr[9], typeof arr[10]); 
 
         // 배열함수 : push. pop
@@ -50,13 +50,13 @@
         // 정렬 : arr.sort(()=>{})
         // let arr2=[10, 55, 11, 25, 5, 44, 21, 8, 20];
         // console.log(arr2);
-        // 오름차순 정렬 - 문자열의 유니코드 코드 포인트 따름
+        // // 오름차순 정렬 - 문자열의 유니코드 코드 포인트 따름
         // arr2.sort();
         // console.log(arr2); // [10, 11, 20, 21, 25, 44, 5, 55, 8]
         // arr2.sort((a, b)=>{return a-b;});
         // console.log(arr2) // [5, 8, 10, 11, 20, 21, 25, 44, 55]
 
-        // 내림차순 정렬
+        // // 내림차순 정렬
         // arr2.sort((a, b)=>{return b-a;});
         // console.log(arr2); // [55, 44, 25, 21, 20, 11, 10, 8, 5]
         // arr2.sort((a, b)=>b-a);
@@ -113,7 +113,7 @@
         //     { pid: "5", pname: "가습기", price: 10, amount: 200 },
         // ];
 
-        // // arr6에 요소 추가 : totalprice : price*amount
+        // // // arr6에 요소 추가 : totalprice : price*amount
         // let maped_01 = arr6.map((item) => {
         //     // 기존의 속성을 그대로 가져온다는 의미 : ...
         //     item={...item, "total_price":item.price*item.amount};
@@ -122,14 +122,14 @@
         // });
         // console.log(maped_01);
 
-        // // 수량이 30이상인 요소만 필터링해서 price가 낮은 값 우선 오름차순 / price*amount 항목 추가
+        // // // 수량이 30이상인 요소만 필터링해서 price가 낮은 값 우선 오름차순 / price*amount 항목 추가
         // const filter_a = arr6.filter(item=>item.amount>=30);
         // filter_a.sort((a,b)=>{return a.price-b.price;});
 
-        // console.log(filter_a);
+        // console.log("수량 30이상, price 오름차순 : ", filter_a);
         // let maped_02 = filter_a.map((item)=>{
         //     item={...item, "price*amount":item.price*item.amount};
-        //     console.log(item);
+        //     console.log("price*amount 추가 : ", item);
         //     return item;
         // });
         // // 답
@@ -185,28 +185,28 @@
         // sum[item.department]=0으로 해서 어떻게 작동하는지 보기
         // 분기 처리 : undefined?1:sum[item:department]+1 --> 정의된게 있으면 1, 
         // sum[item.department]=sum[item.department]==undefined?1:sum[item.department]+1;
-        const result4 = employees.reduce((sum, item)=>{
-            sum[item.department]=sum[item.department]==undefined?item.salary:sum[item.department]+item.salary;
-            console.log(sum);
-            return sum;
-        },{})
-        console.log(result4);
+        // const result4 = employees.reduce((sum, item)=>{
+        //     sum[item.department]=sum[item.department]==undefined?item.salary:sum[item.department]+item.salary;
+        //     console.log(sum);
+        //     return sum;
+        // },{})
+        // console.log(result4);
 
 
-        // 연봉(salary)가 가장높은 직원을 찾아 객체하나만 반환(mdn문서에서 find를 찾아보세요 - !)
-        // 내 답
-        // function isHigh(num){
-        //     return num.salary >= 9000;
-        // }
-        // console.log(employees.find(isHigh));     
+        // // 연봉(salary)가 가장높은 직원을 찾아 객체하나만 반환(mdn문서에서 find를 찾아보세요 - !)
+        // // 내 답
+        // // function isHigh(num){
+        // //     return num.salary >= 9000;
+        // // }
+        // // console.log(employees.find(isHigh));     
         
-        // 1번째 방법
-        const max_item = employees.sort((a,b)=>{return b.salary-a.salary;})[0];
-        console.log(max_item);
+        // // 1번째 방법
+        // const max_item = employees.sort((a,b)=>{return b.salary-a.salary;})[0];
+        // console.log(max_item);
 
-        // 2번째 방법 - find쓰려면 최대값을 알아야 사용 가능
-        const max_item2 = employees.find((item)=>{return item.salary==max_item.salary;})
-        console.log(max_item2);
+        // // 2번째 방법 - find쓰려면 최대값을 알아야 사용 가능
+        // const max_item2 = employees.find((item)=>{return item.salary==max_item.salary;})
+        // console.log(max_item2);
     </script>
 </body>
 
