@@ -5,47 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/common.css">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {}
-
-        .layoutCenter{
-            width:1280px;
-            margin:0 auto;
-            padding:10px;
-        }
-
-        .outer-wrapper {
-            margin: 0 auto;
-        }
-
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        p {
-            margin: 0;
-        }
-
-       
         @font-face {
             font-family: 'logo-font';
-            src: url('./BnviitLasik.ttf');
+            src: url('./font/BnviitLasik.ttf');
             font-style: normal;
         }
-
-        /* -------------------------------------------------------------------- */
+       
         /* main */
         .outer-wrapper>main {
             display: flex;
@@ -84,6 +51,14 @@
 
         .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-top>div {
             margin: 5px 10px;
+            
+        }
+        .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-top>div:nth-child(1){
+            background-color:#F0F1FF;
+            border-radius:5px;
+            color: #4154FF;
+            width: 88px;
+            padding:0 5px;
         }
 
         .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body {
@@ -94,7 +69,7 @@
         .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.poster-box>img {
             width: 300px;
             height: 400px;
-            background-color: lightgray;
+            background-color: #b6bdc7;
         }
 
         .outer-wrapper>main>.mainLeft>.section1>.summary>.summary-body>.poster-box>div {}
@@ -220,7 +195,7 @@
         .outer-wrapper>main>.mainLeft>.section1>.product-content>.content-casting>.casting>.casting-ul>.casting-li>.casting-img>img {
             width: 95px;
             height: 95px;
-            background-color: lightgray;
+            background-color: #b6bdc7;
             border-radius: 50px;
         }
 
@@ -238,17 +213,25 @@
         }
 
 
-        /* main-section2 */
+        /* main-section2-side */
+        .side{
+            position:sticky;
+            top:50px;
+        }
         .outer-wrapper>main>.mainRight>.section2-side {
             margin:0 15px;
             width: 370px;
         }
-        .outer-wrapper>main>.mainRight>.section2-side>.sideMain{}
-
-        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate{
-            margin:40px 0;
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain{
+            width:100%;
+            height:550px;
             border:1px solid;
             border-radius:15px;
+            margin-top:50px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate{
+            margin:20px 0;
+            height:380px;
         }
         .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideHeader{
             margin:0 20px;
@@ -300,7 +283,7 @@
             margin-top:20px;
         }
         .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>.inactivate{
-            color:#aaa;
+            color:#b6bdc7;
         }
         .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li.activate{
             color:#fff;
@@ -321,103 +304,82 @@
             background:#f2f2f2;
         }
         .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainDate>.sideCalender>.Calender>.days>li.active::before{
-            background:#008aff;
+            background:#4154FF;
         }
 
 
-        /* footer */
-
-        footer>.footnav {
-            max-width: 1260px;
-            margin: 0 auto;
-            padding: 0 30px;
-            display: flex;
-            list-style-type: none;
-            justify-content: space-around;
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainRound{
+            /* border:1px solid; */
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainRound>.round{}
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainRound>.round>h4{
+            color:#b6bdc7;
+            margin:5px 20px;
+            padding:5px 0;
+            border-top: 0.1rem solid #b6bdc7;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainRound>.round>span{
+            margin:5px 20px;
+            font-size:23px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideMain>.sideMainRound>.roundInfo{
+            margin:10px 20px;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideBtnMain{
+            
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideBtnMain>a{
+            width: 100%;
+            height: 52px;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border:.5px solid #4154FF;
+            display:block;
+            text-align: center;
+            line-height:50px;
+            border-radius: 1rem;
+            margin:10px 0;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideBtnMain>.btnBook{
+            color: #fff;
+            background-color: #4154FF;
+        }
+        .outer-wrapper>main>.mainRight>.section2-side>.sideBtnMain>.btnForeign{
+            color:#4154FF;
         }
 
-        footer>.footnav>li {
-            font-size: 0.9rem;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown>.dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid lightgray;
-            border-radius: 15px;
-            padding: 5px 0;
-            list-style: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown>.dropdown-menu>li {
-            padding: 5px 20px;
-
-        }
-
-        .dropdown>.dropdown-menu>li>a {
-            text-decoration: none;
-            color: black;
-            white-space: nowrap;
-
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-
-
-
-        footer>.footnav>li>a {
-            color: black;
-            text-decoration: none;
-        }
-
-        footer>.footnav>li>span {
-            user-select: none;
-        }
-
-        footer>.footnav>li:nth-child(5) {
-            font-weight: 700;
-        }
-
-
-        footer>.footmain {
-            max-width: 1260px;
-            margin: 0 auto;
-            padding: 0 30px;
-            justify-content: space-between;
-            display: flex;
+        /* 반응처리 */
+        /* 1080이하인 경우 */
+        @media (max-width:767px){
+            .outer-wrapper>header>.mainheader-wrapper>.sub-header{
+                display:none;
+            }
+            .outer-wrapper>header>.subheader-wrapper{
+                display:none;
+            }
 
         }
 
-        footer>.footmain>.footsection {
-            font-size: 12px;
+        @media(max-width:1080px){
+            .outer-wrapper>header>.mainheader-wrapper>.main-header>.search{
+                width:290px;
+            }
+
+            .outer-wrapper>header>.mainheader-wrapper>.sub-header{
+                display:none;
+            }
+            .outer-wrapper>header>.subheader-wrapper{
+                display:none;
+            }
+
         }
 
-
-        footer>.footbar {
-            max-width: 1260px;
-            margin: 0 auto;
-            padding: 0 30px;
-            font-size: 0.7rem;
-            text-align: left;
-            color: gray;
-
-        }
     </style>
 </head>
 
 <body>
-    <div class="outer-wrapper ">
+    <div class="outer-wrapper">
         <header class="layoutCenter">
             <div class="mainheader-wrapper layout-01">
                 <div class="main-header">
@@ -440,8 +402,14 @@
                         <li><a href="">티켓</a></li>
                     </ul>
                     <ul class="service">
-                        <li><a href="">로그인</a></li>
-                        <li><a href="">내 예약</a></li>
+                        <li><a href="">📍 로그인</a></li>
+                        <li class="service-dropdown">
+                            <a href="">✉ 내 예약</a>
+                            <ul class="service-reservation">
+                                <li><a href="">▪ 투어 예약  ▸ </a></a></li>
+                                <li><a href="">▪ 티켓 예약  ▸ </a></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -475,7 +443,7 @@
                 <section class="section1">
                     <div class="summary">
                         <div class="summary-top">
-                            <div>단독판매</div>
+                            <div>단독판매⊛</div>
                             <h2>연극 <나의 아저씨>
                             </h2>
                             <div>연극 주간 15위</div>
@@ -488,7 +456,7 @@
                             <ul class="info">
                                 <li class="info-li">
                                     <strong>장소</strong>
-                                    <a href="">LG아트센터 서울 U+ 스테이지▶</a>
+                                    <a href="">LG아트센터 서울 U+ 스테이지 ▸</a>
                                 </li>
                                 <li class="info-li">
                                     <strong>공연기간</strong>
@@ -505,7 +473,7 @@
                                 <li class="info-li">
                                     <strong>가격</strong>
                                     <div class="info-li-price">
-                                        <a href="">전체가격보기▶</a>
+                                        <a href="">전체가격보기 ▸</a>
                                         <p>R석 77,000원</p>
                                         <p>발코니석 55,000원</p>
                                     </div>
@@ -514,7 +482,7 @@
                                 <li class="info-li">
                                     <strong>혜택</strong>
                                     <div class="info-li-benefit">
-                                        <a href="">무이자할부▶</a>
+                                        <a href="">무이자할부 ▸</a>
                                         <a href="">NOL포인트 10% 적립받기 > </a>
                                         <a href="">가입하고 중복할인 쿠폰받기 > </a>
 
@@ -523,7 +491,7 @@
                                 </li>
                                 <li class="info-li">
                                     <strong>프로모션</strong>
-                                    <a href="">선착순 350명 5만원이상 결제시 3천원 즉시할인 > </a>
+                                    <a href="">선착순 350명 5만원이상 결제시 3천원 즉시할인 ▸ </a>
                                 </li>
                             </ul>
 
@@ -616,8 +584,8 @@
                     </div>
                 </section>
             </div>
-            <div class="mainRight">
-                <section class="section2-side">
+            <div class="mainRight ">
+                <section class="section2-side side">
                     <div class="sideMain">
                         <div class="sideMainDate">
                             <div class="sideHeader">
@@ -683,12 +651,19 @@
                             </div>
                         </div>
                         <div class="sideMainRound">
-                            <div></div>
-                            <div></div>
+                            <div class="round">
+                                <h4>회차</h4>
+                                <span>1회 19:30</span>
+                            </div>
+                            <div class="roundInfo">
+                                <p>잔여석 안내서비스를 제공하지 않습니다.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="sideBtnMain">
 
+                    <div class="sideBtnMain">
+                        <a class="btnBook" href=""><span>예매하기</span></a>
+                        <a class="btnForeign" href=""><span>BOOKING/外國語</span></a>
                     </div>
                 </section>
             </div>
