@@ -93,27 +93,28 @@
             contextmenu : 마우스 우클릭
         */
 
-        const d3El = document.querySelector('.d3');
-        // d3El.addEventListener('mouseenter',()=>{ 
-        //     console.log('mouseenger');
-        //     d3El.innerHTML=`<h1>MOUSEENTER</h1>`;
-        // }); // 마우스가 들어간 시점 한번
-        
-        d3El.addEventListener('mouseleave',()=>{d3El.innerHTML=`<h1>MOUSELEAVE</h1>`});
-        d3El.addEventListener('mouseover',()=>{
-            console.log('mouseover...');
-            d3El.innerHTML=`<h1>MOUSEOVER</h1>`
-        }); // 마우스가 안에있을 때 계속
-        
-        d3El.innerHTML=`<h1>MOUSEOVER</h1>`;
+        // const d3El = document.querySelector('.d3');
 
-        d3El.addEventListener('dbclick',()=>{ d3El.innerHTML=`<h1>MOUSEDBLCLICK</h1>`});
-        d3El.addEventListener('contextmenu',(e)=>{
-            e.preventDefault();
-            d3El.innerHTML=`<h1>MOUSE우클릭</h1>`
-        });
+        // // d3El.addEventListener('mouseenter',()=>{ 
+        // //     console.log('mouseenter');
+        // //     d3El.innerHTML=`<h1>MOUSEENTER</h1>`;
+        // // }); // 마우스가 들어간 시점 한번
+        
+        // d3El.addEventListener('mouseleave',()=>{d3El.innerHTML=`<h1>MOUSELEAVE</h1>`;});
+        
+        // d3El.addEventListener('mouseover',()=>{
+        //     console.log('mouseover...');
+        //     d3El.innerHTML=`<h1>MOUSEOVER</h1>`;
+        // }); // 마우스가 안에있을 때 계속
+        
+        // d3El.addEventListener('dbclick',()=>{ d3El.innerHTML=`<h1>MOUSEDBLCLICK</h1>`;});
+        
+        // d3El.addEventListener('contextmenu',(e)=>{
+        //     e.preventDefault();
+        //     d3El.innerHTML=`<h1>MOUSE우클릭</h1>`;
+        // });
 
-        document.addEventListener('contextmenu',(e)=>{e.preventDefault();})
+        // document.addEventListener('contextmenu',(e)=>{e.preventDefault();})
 
         /*
             dragstart   : 드래그 시작(마우스를 끌어당길때의 시작점)
@@ -126,11 +127,11 @@
         */
 
         // 기본 기능 꺼놓고 시작하기 -> .preventDefault()
-        // const d4El = document.querySelector('.d4');
-        // d4El.addEventListener('dragenter',(e)=>{
-        //     e.preventDefault();
-        //     console.log('dragenter...');
-        // });
+        const d4El = document.querySelector('.d4');
+        d4El.addEventListener('dragenter',(e)=>{
+            e.preventDefault();
+            console.log('dragenter...');
+        });
 
         // // 유효성 검사 함수
         // function isVaild(file){
