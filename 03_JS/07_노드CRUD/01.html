@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li>1_LIST</li>
+        <li id="li2">2_LIST</li>
+        <li class="item">3_LIST</li>
+        <li>4_LIST</li>
+        <li id="li5">5_LIST</li>
+        <li>6_LIST</li>
+        <li class="item">7_LIST</li>
+        <li class="item">8_LIST</li>
+    </ul>
+
+    <script>
+        // 노드 탐색
+        // id 
+        const li2El = document.getElementById('li2');
+        li2El.style.fontSize='24px'; // style 지정하는 1번째 방법(font-size X fontSize)
+        li2El.setAttribute("style", "color:red;background-color:black;"); // style 지정하는 2번째 방법 -> 더 넓은 범위에 사용됨(1번째 방법이 덮여쓰여짐)
+        // select
+        const li2El_2 = document.querySelector('#li2');
+        li2El_2.style.width = '200px';
+        
+        const itemEl = document.querySelector('.item'); 
+        itemEl.style.color='green';
+        itemEl.style.fontSize='2rem';
+        // querySelector로 스타일 지정시 item으로 지정한 맨 첫번째 꺼만 스타일 지정
+
+
+        const itemEls = document.querySelectorAll('.item');
+        console.log(itemEls); // (Protytype : Object)로 배열형태로 나타남 -> 배열함수 사용가능
+        itemEls.forEach((el)=>{
+            el.style.fontWeight='900';
+            el.style.backgroundColor='orange'; 
+
+        });
+        
+        // tagName
+        let liEls = document.getElementsByTagName('li');
+        console.log(liEls); // 유사배열(Protytype : HTMLCollection)
+        // liEls.forEach((el)=>{
+        //     el.style.fontSize='4rem';
+        //     el.style.color='blue';
+        // })
+        // 결과) 에러 : 유사배열은 forEach가 없어서 사용 X -> prototype에서 forEach기능 있는지 확인하고 사용
+        
+        // Array.from(유사배열) : 유사배열을 배열로 변환
+        liEls = Array.from(liEls);
+        console.log(liEls); // Protytyoe : Array(0) 으로 바뀐거 확인
+        liEls.forEach((el)=>{
+            el.style.fontSize='4rem';
+            el.style.color='blue';
+        })
+    
+    
+    </script>
+</body>
+</html>

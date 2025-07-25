@@ -162,23 +162,23 @@
         //     // console.log('drop', e.dataTransfer.files);
         //     // console.log('drop', e.dataTransfer.files[0]);
 
-        //     // 파일이 여러개일 경우
-        //     const files = e.dataTransfer.files;
-        //     console.log(files);
+            // 파일이 여러개일 경우
+            const files = e.dataTransfer.files;
+            console.log(files);
 
-        //     // 파일 하나하나를 읽어들이고
-        //     for(let i=0;i<files.length;i++){
-        //         const file = files[i];
-        //         // 유효성 검증 : 유효하지 않다면(이미지가 아니라면) -> return -> 바로 밑에 있는 코드들은 실행하지 X
-        //         if(!isVaild(file)){
-        //             return;
-        //         }
-        //         // 이미지 미리보기(PREVIEW)
-        //         const previewEl = document.querySelector('.preview');
-        //         const newImageEl = document.createElement('img'); // img태그 생성
-        //         newImageEl.src=URL.createObjectURL(file);
-        //         previewEl.appendChild(newImageEl);
-        //     }
+            // 파일 하나하나를 읽어들이고
+            for(let i=0;i<files.length;i++){
+                const file = files[i];
+                // 유효성 검증 : 유효하지 않다면(이미지가 아니라면) -> return -> 바로 밑에 있는 코드들은 실행하지 X
+                if(!isVaild(file)){
+                    return;
+                }
+                // 이미지 미리보기(PREVIEW)
+                const previewEl = document.querySelector('.preview');
+                const newImageEl = document.createElement('img'); // img태그 생성
+                newImageEl.src=URL.createObjectURL(file);
+                previewEl.appendChild(newImageEl);
+            }
             
 
 

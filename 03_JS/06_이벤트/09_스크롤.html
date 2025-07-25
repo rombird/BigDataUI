@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            height:80px;
+            border-bottom:1px solid;
+            background-color:red;
+            transition:.5s;
+            position:fixed;
+            left:0;
+            top:0;
+            width:100%;
+        }
+        .show{
+            /* nav 보여주기 */
+            height:80px;
+
+        }
+        .hide{
+            /* nav 숨기기 */
+            height:0px;
+        }
+        main>section{
+            height:500px;
+            background-color:royalblue;
+        }
+    </style>
+</head>
+<body style="width:8000px;height:5000px;margin:0;padding:0;">
+    
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav></nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+    <script>
+
+        // 1. scroll 한번 내리면 헤더 스타일 변경
+        const navEl = document.querySelector('.wrapper nav');
+
+        let scrollState = 0;
+
+        document.addEventListener('scroll', ()=>{
+            // window.scollY : ViewPort를 기준으로 가장 위쪽 부분의 세로축 위치
+            console.log('scrollY...', window.scrollY);
+            // console.log('scrollTop...', document.documentElement.scrollTop);
+            // console.log('scrollHeight...', document.documentElement.scrollHeight);
+
+            // window.scollX : ViewPort를 기준으로 가장 왼쪽 부분의 세로축 위치
+            // console.log('scrollX...', window.scrollX);
+            // console.log('scrollX...', document.documentElement.scrollLeft);
+
+            // 2. 스크롤값이 1000이상인 상태에서 스크롤을 위로 올렸을 때 헤더 보이게
+            // 상태값을 담기위한 변수 : let scrollState
+            // window.scrollY >= 1000 && scrollState > window.scrollY : state는 멈춰있는 상태, window.scrollY는 계속 민감하게 반응(휠을 올리면 scrollY는 값이 작아짐)
+            // if 순서 중요!!!
+            if(window.scrollY >= 1000 && scrollState > window.scrollY){
+                navEl.classList.remove('hide');
+                navEl.classList.add('show');
+            }
+            else if(window.scrollY>=30){
+                navEl.classList.remove('show'); // 스트롤을 30이상의 위치로 내리면 헤더 보여주는 걸 제거
+                navEl.classList.add('hide');
+            }
+            else{
+                navEl.classList.remove('hide');
+                navEl.classList.add('show');
+            }
+            scrollState = window.scrollY;
+        })
+    </script>
+</body>
+</html>
