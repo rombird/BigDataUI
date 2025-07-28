@@ -82,13 +82,28 @@
             const insertBtnEl = document.querySelector('.btn-insert'); // 버튼
             const containerEl = document.querySelector('.container'); // 입력한내용이 붙여지는 부분
 
-            // 이벤트 처리 등록
+            // 이벤트 처리 등록 : 입력버튼 눌렀을 때 이벤트처리
             insertBtnEl.addEventListener('click',()=>{
                 const text = insertEl.value; // 텍스트 입력한 값
+                // 유효성 체크 유효하지 않다면 return
+                if(!isValid(text))
+                    return ; 
                 // container에 item 추가
                 createNode(text); // 노드생성
                 insertEl.value=""; // 입력했던 내용 없어짐
             })
+
+            // 엔터로 입력한 내용 저장하는 기능 -> console.log(e)로 엔터 keyCode 확인
+            insertEl.addEventListener('keydown',(e)=>{
+                // console.log(e);
+                if(e.keyCode == 13){
+                    const text = insertEl.value;
+                    if(!isValid(text))
+                        return ;
+                    createNode(text);
+                    insertEl.value="";
+                }
+            });
 
             //노드추가 함수 생성(Hositing 적용)
             function createNode(text){
@@ -112,6 +127,14 @@
 
                 // 속성추가
                 inputEl.setAttribute('readonly', true)
+                aEl.setAttribute('href', 'javascript:void(0)'); // 입력한 내용 삭제되는 기능
+
+                // 이벤트 추가 (a 태그 이벤트 추가)
+                aEl.addEventListener('click', (e)=>{
+                    const itemEl = e.target.parentNode.parentNode.parentNode;
+                    // console.log(e.target.parentNode.parentNode.parentNode); // e.target : span 태그 출력, 부모 노드 보고 싶을 때 .parentNode
+                    itemEl.remove();
+                });
 
                 // 데이터 삽입
                 spanEl.innerHTML ='delete'; // 휴지통 아이콘 삽입됨
@@ -127,9 +150,24 @@
                 itemEl.appendChild(rightEl)
                 containerEl.appendChild(itemEl)
                 // appendChild -> prepend로 잡으면 위로 올라감
-
-
             }
+
+            // 유효성 검증 함수
+            function isValid(text){
+                const regex = /^[0-9]/;
+                // 공백여부 확인
+                // .trim() : 앞 뒤 문자열에 공백제거 
+                if(text.trim()===""||text.trim()===null){
+                    alert("내용을 입력하세요.");
+                    return false;
+                }
+                if(regex.test(text)){
+                    alert("첫번째는 숫자를 입력할 수 없습니다.");
+                    return false;
+                }
+                return true;
+            }
+
 
          })
     </script>
