@@ -11,24 +11,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
-        *{}
-        body{}
+        * {}
 
-        .wrapper{}
-        .wrapper>header{}
+        body {}
 
-        .wrapper>main{}
-        .wrapper>main>section{}
-        
-        .wrapper>main>section.banner>.swiper{
-            min-height:720px;
+        .wrapper {}
+
+        .wrapper>header {}
+
+        .wrapper>main {}
+
+        .wrapper>main>section {}
+
+        .wrapper>main>section.banner>.swiper {
+            min-height: 720px;
         }
-        .wrapper>main>section.banner>.swiper>.swiper-wrapper{
-            height:100%;
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper {
+            height: 100%;
         }
-        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide{height:100%;}
-        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a{}
-        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a>img{}
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide {
+            height: 100%;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
     </style>
 </head>
 
@@ -62,17 +71,17 @@
                                 <img src="./images/4.jpg" alt="">
                             </a>
                         </div>
-                        
+
                     </div>
                     <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
 
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
 
                     <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <!-- <div class="swiper-scrollbar"></div> -->
                 </div>
             </section>
         </main>
@@ -80,8 +89,38 @@
     </div>
 
     <script>
+        
         // new Swiper('선택자', {옵션들})
-        const swiperBanner = new Swiper('', {})
+        const swiperBanner = new Swiper('.wrapper>main>section.banner>.swiper', {
+            // Optional parameters
+            direction: 'horizontal', // horizontal(수평 slide), vertical(수직 slide)
+            // 배너 자동으로 넘어가도록
+            autoplay:{
+                // 배너 2초마다 슬라이드
+                delay:2000,
+                // 마우스 hover하면 배너 슬라이드 멈춤
+                pauseOnMouseEnter:true,
+            },
+            // 배너 계속 반복
+            loop: true,
+
+            // // If we need pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            // },
+
+            // Navigation arrows
+            // 헷갈리지 않게 선택자 명확하게 위치 구분 .swiper-button-next 앞에 선택자 붙여넣기
+            navigation: {
+                nextEl: '.wrapper>main>section.banner>.swiper .swiper-button-next',
+                prevEl: '.wrapper>main>section.banner>.swiper .swiper-button-prev',
+            },
+
+            // // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
     </script>
 </body>
 
