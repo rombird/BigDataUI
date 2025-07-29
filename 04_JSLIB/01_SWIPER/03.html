@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- SWIPER CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- GOOGLE ICON : &icon-name=pause 지워주기-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            font-size: 2rem;
+            border: 3px solid;
+            border-radius: 50%;
+        }
+    </style>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {}
+
+        .wrapper {}
+
+        .wrapper>header {
+            min-height: 80px;
+            background-color: white;
+        }
+
+        .wrapper>header>.top-header {
+            height: 30px;
+        }
+
+        .wrapper>header>.top-header>.swiper {
+            height: 100%;
+            background-color: bisque;
+        }
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper {}
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper>.swiper-slide {}
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+
+        .wrapper>main {}
+
+        .wrapper>main>section {}
+
+        .wrapper>main>section.banner>.swiper {
+            min-height: 720px;
+            /* swiper, pagination(type=fraction)위치 조정 */
+            position: relative;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper {
+            height: 100%;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide {
+            height: 100%;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 0;
+            transition: .3s;
+        }
+
+        /* 해당 배너가 화면에 띄워질때 pagination 작동 */
+        /* pagination의 type=bullets 일 때 */
+        .wrapper>main>section.banner>.swiper .swiper-pagination-bullet-active {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+        }
+
+        /* pagination의 type=fraction일 때 */
+        .wrapper>main>section.banner>.swiper .swiper-pagination {
+            color: white;
+            font-size: 1.3rem;
+            /* pagination 위치 조정 */
+            position: absolute;
+            left: 15.625vw;
+            top: 80%;
+            width: 300px;
+            letter-spacing: 3px;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-current {
+            color: royalblue;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-total {}
+
+        .wrapper>main>section.banner>.swiper .swiper-button-next,
+        .wrapper>main>section.banner>.swiper .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            /* border:1px solid white; */
+            border-radius: 50%;
+            /* 위치 조정 */
+            position: absolute;
+            top: 82%;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-next {
+            left: calc(15.625vw + 180px);
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-prev {
+            left: calc(15.625vw + 65px);
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-next::after,
+        .wrapper>main>section.banner>.swiper .swiper-button-prev::after {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .wrapper>main>section.banner>.swiper .start-stop-toggle {
+            position: absolute;
+            top: 79.7%;
+            z-index: 100;
+            left: calc(15.625vw + 10px);
+            cursor: pointer;
+            color: white;
+
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
+
+        /* multi slider */
+        .wrapper>main>section.multi-slider {
+            border: 1px solid;
+            min-height: 500px;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper {
+            height: 500px;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide {
+            width: 250px;
+            height: 250px;
+            border: 1px solid;
+            transition: .3s;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
+
+        .wrapper>main>section.multi-slider .swiper-slide-active {
+            background-color: orange;
+            transform: scale(1.5);
+            z-index: 2;
+        }
+
+        .wrapper>main>section.multi-slider .swiper-slide-prev {
+            transform: scale(1.2);
+            background-color: white;
+            z-index: 1;
+        }
+
+        .wrapper>main>section.multi-slider .swiper-slide-next {
+            transform: scale(1.2);
+            background-color: white;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><a href="javascript:void(0)">[공지] 오늘 휴강입니다</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">[공지] 다가오는 금요일은 평가날입니다</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">[공지] 31일은 영화관람일입니다</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">[공지] 8월 1일은 자리 변경날입니다</a></div>
+                    </div>
+                </div>
+            </div>
+            <nav></nav>
+        </header>
+        <main>
+            <section class="banner">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/4.jpg" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- start/stop button -->
+                    <div class="start-stop-toggle">
+                        <span class="material-symbols-outlined">
+                            <!-- pause -->
+                            play_arrow
+                        </span>
+                    </div>
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </section>
+
+            <!-- Multislider -->
+            <section class="multi-slider">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)"><img src="" alt=""></a></div>
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+
+    <script>
+
+        // new Swiper('선택자', {옵션들})
+        const swiperBanner = new Swiper('.wrapper>main>section.banner>.swiper', {
+            // Optional parameters
+            direction: 'horizontal', // horizontal(수평 slide), vertical(수직 slide)
+            // 배너 자동으로 넘어가도록
+            autoplay: {
+                // 배너 2초마다 슬라이드
+                delay: 2000,
+                // 마우스 hover하면 배너 슬라이드 멈춤
+                // pauseOnMouseEnter: true,
+            },
+            loop: true,// 배너 계속 반복
+            effect: "slide", // slide(기본), fade, scroll, cube, coverflow, flip
+            mousewheel: true, // 마우스 휠로 움직여지도록
+
+            // If we need pagination
+            // 기본은 배너 하단에 oooo 으로 구분 (bullets)
+            pagination: {
+                el: '.wrapper>main>section.banner>.swiper .swiper-pagination', // 선택자 명확하게 구분
+                clickable: true,
+                type: 'fraction', // bullets(기본), fraction, progressbar
+            },
+
+            // Navigation arrows
+            // 헷갈리지 않게 선택자 명확하게 위치 구분 .swiper-button-next 앞에 선택자 붙여넣기
+            navigation: {
+                nextEl: '.wrapper>main>section.banner>.swiper .swiper-button-next',
+                prevEl: '.wrapper>main>section.banner>.swiper .swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        })
+
+        // 토글버튼 만들기 -> 클릭하면 정지버튼으로 바뀌도록
+        const playPauseBtn = document.querySelector('.start-stop-toggle span');
+        let isPlaying = true;
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                playPauseBtn.innerHTML = 'pause';
+                // 정지버튼을 누르면 배너 stop
+                swiperBanner.autoplay.stop();
+                isPlaying = false;
+            } else {
+                playPauseBtn.innerHTML = 'play_arrow';
+                swiperBanner.autoplay.start();
+                isPlaying = true;
+            }
+        });
+
+        // 수직 공지사항 swiper 만들기
+        const noticeSwiper = new Swiper('.top-header .swiper', {
+            // Optional parameters
+            direction: 'vertical',
+            autoplay: {
+                delay: 2000,
+            },
+            loop: true,
+            mousewheel: true,
+        });
+
+
+        // Muluti swiper
+        const multiSwiper = new Swiper('.multi-slider .swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 2000
+            },
+
+            //multi - 한번에 보여지는 그림 4개, 중앙에 배열
+            slidesPerView: 4,
+            centeredSlides: true,
+            // spaceBetween:20, // 이미지간의 간격 - padding으로 커버 가능
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.multi-slider .swiper-button-next',
+                prevEl: '.multi-slider .swiper-button-prev',
+            },
+
+        });
+
+        //마우스 hover시 autoplay stop
+        const section_02_swiper = document.querySelector('.multi-slider .swiper')
+        section_02_swiper.addEventListener('mouseover', () => {
+            multiSwiper.autoplay.stop();
+        })
+        section_02_swiper.addEventListener('mouseleave', () => {
+            multiSwiper.autoplay.start();
+        })
+
+        // MultiSlider 주변 slide 클릭시 중심위치 이동 --> 그냥 한번 보기
+        let allSwiperSilder = document.querySelectorAll('.multi-slider .swiper .swiper-slide')//배열OBJECT반환
+        allSwiperSilder = Array.from(allSwiperSilder)
+        allSwiperSilder.forEach(item => {
+
+            item.addEventListener('click', () => {
+                let idx = -1
+                if (!item.classList.contains('swiper-slide-active')) {
+                    //클릭한 swiper-slide가 active가 아닌경우
+                    allSwiperSilder.forEach(el => {
+                        el.classList.remove('swiper-slide-active');
+                        el.classList.remove('swiper-slide-prev')
+                        el.classList.remove('swiper-slide-next')
+                    })
+                    item.classList.add('swiper-slide-active')
+                    idx = Array.from(allSwiperSilder).indexOf(item);
+                    console.log('idx', idx)
+                    if (idx === 0) {
+                        //슬라이드중 첫번째
+                        allSwiperSilder[allSwiperSilder.length - 1].classList.add('swiper-slide-prev')
+                        allSwiperSilder[idx + 1].classList.add('swiper-slide-next')
+                    }
+                    else if (idx == allSwiperSilder.length - 1) {
+                        //슬라이드중 마지막번째
+                        allSwiperSilder[idx - 1].classList.add('swiper-slide-prev')
+                        allSwiperSilder[0].classList.add('swiper-slide-next')
+                    }
+                    else {
+                        allSwiperSilder[idx - 1].classList.add('swiper-slide-prev')
+                        allSwiperSilder[idx + 1].classList.add('swiper-slide-next')
+                    }
+                    multiSwiper.slideTo(idx);
+                }
+            })
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
