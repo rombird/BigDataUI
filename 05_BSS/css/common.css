@@ -12,7 +12,19 @@ a{text-decoration:none;color:black;}
 
 /*  */
 .wrapper>main{}
-.wrapper>main>section{}
 
+.wrapper>main>section{}
+.wrapper>main>section.banner-block .carousel-control-prev,
+.wrapper>main>section.banner-block .carousel-control-next{
+
+    border:5px solid white;
+    /* background-color:red; */
+    /* z-index:1000; */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    width:50px;
+    height:50px;
+}
 /*  */
 .wrapper>footer{}
