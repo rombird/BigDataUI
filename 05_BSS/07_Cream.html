@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                         arrow_forward
                     </span>
                     <div class="card-body">
@@ -193,6 +193,17 @@
             </section>
         </main>
         <footer></footer>
+    </div>
+
+    <!-- 오프캔버스 -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            ...
+        </div>
     </div>
 </body>
 
