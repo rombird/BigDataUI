@@ -2,6 +2,13 @@ package Ch04;
 
 class ShopService {
 	// 싱글톤 패턴 코드 처리
+	private static ShopService instance;
+	private ShopService() {};
+	public static ShopService getInstance() {
+		if(instance == null)
+			instance = new ShopService;
+			
+	}
 }
 
 public class C05Ex {
