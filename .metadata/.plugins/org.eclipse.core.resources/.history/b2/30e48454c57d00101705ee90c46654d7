@@ -1,0 +1,68 @@
+package Ch08;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class C07TxMain {
+
+	public static void main(String[] args) {
+		// DB CONN DATA
+		String id = "root";
+		String pw = "1234";
+		String url = "jdbc:mysql://localhost:3306/opendatadb";
+		// DBMS 종류 // DBMS 위치:접속포트/접속하려는 DB명
+
+		// JDBC 참조변수
+		Connection conn = null; // DBMS의 특정 DB와 연결되는 객체
+		PreparedStatement pstmt = null; // SQL Query 전송용 객체
+		ResultSet rs = null; // Select 결과물 담을 객체
+
+		// 연결작업 - Driver 로딩
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Driver Loading Succcess...");
+			conn = DriverManager.getConnection(url, id, pw);
+			System.out.println("DB CONNECTED...");
+			
+			// 전체를 하나의 트랜잭션으로 묶어준다면(각각의 트랜잭션은 서로 영향을 주지 X - 독립성)
+			//TX START
+			// autocommit -> false
+			conn.setAutoCommit(false); // commit(승인) - 자동으로 커밋이 되는데 autocommit 끄는 기능 -> 밑의 insert 쿼리가 임시로 보관(바로 커밋 X)
+			// INSERT
+			pstmt = conn.prepareStatement("insert into tbl_a values(1, 'a')"); // 각각의 트랜잭션은 서로 영향을 주지 X
+			pstmt.executeUpdate();
+			// INSERT
+			pstmt = conn.prepareStatement("insert into tbl_a values(2, 'b')");
+			pstmt.executeUpdate();
+			// INSERT
+			pstmt = conn.prepareStatement("insert into tbl_a values(1, 'c')"); // TX 묶어주기 전에 : PK 중복되어서 -> 이 앞까지만 INSERT됨
+			pstmt.executeUpdate();
+			// INSERT
+			pstmt = conn.prepareStatement("insert into tbl_a values(4, 'd')");
+			pstmt.executeUpdate();
+			// TX END
+			conn.commit();
+			
+			// 만약 tx에 문제가 발생한다면 -> 
+			
+
+		} catch (ClassNotFoundException e1) {
+			System.out.println("클래스 부재 예외발생!");
+		} catch (SQLException e2) {
+			System.out.println("SQL 예외발생!");
+//			e2.printStackTrace(); // 예외발생하면 이 코드를 사용해서 확인해보기
+			try{System.out.println("ROLLBACK처리!"); conn.rollback();} catch (SQLException e) {e2.printStackTrace();} // tx의 실행결과를 무효화 -> 특정 지점으로 복원도 가능 -> 롤백하다가 오류 발생 가능 
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} // 자원제거 꼭해주기!
+		}
+
+	}
+
+}

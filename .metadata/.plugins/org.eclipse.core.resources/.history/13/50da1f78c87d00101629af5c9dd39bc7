@@ -1,0 +1,16 @@
+package Ch08.ex;
+
+public class BookDto {
+	// 속성
+	private Long bookCode;
+	private String bookName;
+	private String publisher;
+	private String isbn;
+	// 디폴트 생성자
+	
+	// 모든인자 생성자
+	
+	// Getter and Setter
+	
+	// toString
+}
