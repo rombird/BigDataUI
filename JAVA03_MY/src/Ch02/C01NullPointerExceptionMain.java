@@ -12,7 +12,7 @@ public class C01NullPointerExceptionMain {
 		// 예외처리는 runtime error(실행오류) 중의 하나 , 프로그램 중단을 막기 위해 하는 처리
 		try {
 			String str = null;
-			System.out.println(str.toString());
+			System.out.println(str.toString()); 
 		}catch(NullPointerException e) {
 //			System.out.println("예외발생 : " + e);
 //			System.out.println(e.getCause()); // null
