@@ -1,10 +1,13 @@
 package Ch01;
 
+import java.util.Objects;
+
 class C02Simple{
 	int n;
 	C02Simple(int n){
 		this.n=n;
 	}
+	
 	
 	@Override
 	public boolean equals(Object obj) { // obj로 어떤 대상을 받는다 == 모든 객체를 다 받아낼수있는 형태로 업캐스팅하겠다
