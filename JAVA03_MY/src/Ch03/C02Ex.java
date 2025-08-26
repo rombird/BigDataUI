@@ -1,20 +1,23 @@
 package Ch03;
 
+abstract class 팝콘재료{
+	
+}
 
-class 카라멜{
+class 카라멜 extends 팝콘재료{
 	@Override
 	public String toString() {
 		return "카라멜맛";
 	}
 }
-class 버터옥수수{
+class 버터옥수수 extends 팝콘재료{
 	@Override
 	public String toString() {
 		return "버터옥수수맛";
 	}
 }
 
-class PopCorn <T>{
+class PopCorn <T extends 팝콘재료>{
 	private T 재료;
 	
 	public PopCorn(T 재료) {
