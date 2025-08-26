@@ -1,25 +1,39 @@
 package Ch02;
 
+
 public class UserDto {
 	private String userid;
 	private String password;
+	private String rePassword;
 	private String username;
-	private Integer zipcode;
+	private String zipcode;
 	private String addr1;
 	private String addr2;
-	private Integer phone1;
-	private Integer phone2;
-	private Integer phone3;
+	private String phone1;
+	private String phone2;
+	private String phone3;
+	private String tel1;
+	private String tel2;
+	private String tel3;
+	private String email;
+	private String year;
+	private String month;
+	private String day;
 	
-	// 디퐅트 생성자
-	public UserDto() {}
+	//디폴트생성자
+	//모든인자생성자
+	//Getter and Setter
+	//toString
 	
-	// 모든 인자 생성자
-	public UserDto(String userid, String password, String username, Integer zipcode, String addr1, String addr2,
-			Integer phone1, Integer phone2, Integer phone3) {
+	public UserDto(){}
+
+	public UserDto(String userid, String password, String rePassword, String username, String zipcode, String addr1,
+			String addr2, String phone1, String phone2, String phone3, String tel1, String tel2, String tel3,
+			String email, String year, String month, String day) {
 		super();
 		this.userid = userid;
 		this.password = password;
+		this.rePassword = rePassword;
 		this.username = username;
 		this.zipcode = zipcode;
 		this.addr1 = addr1;
@@ -27,9 +41,15 @@ public class UserDto {
 		this.phone1 = phone1;
 		this.phone2 = phone2;
 		this.phone3 = phone3;
+		this.tel1 = tel1;
+		this.tel2 = tel2;
+		this.tel3 = tel3;
+		this.email = email;
+		this.year = year;
+		this.month = month;
+		this.day = day;
 	}
-	
-	// getter and setter
+
 	public String getUserid() {
 		return userid;
 	}
@@ -46,6 +66,14 @@ public class UserDto {
 		this.password = password;
 	}
 
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -54,11 +82,11 @@ public class UserDto {
 		this.username = username;
 	}
 
-	public Integer getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
 
-	public void setZipcode(Integer zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 
@@ -78,36 +106,93 @@ public class UserDto {
 		this.addr2 = addr2;
 	}
 
-	public Integer getPhone1() {
+	public String getPhone1() {
 		return phone1;
 	}
 
-	public void setPhone1(Integer phone1) {
+	public void setPhone1(String phone1) {
 		this.phone1 = phone1;
 	}
 
-	public Integer getPhone2() {
+	public String getPhone2() {
 		return phone2;
 	}
 
-	public void setPhone2(Integer phone2) {
+	public void setPhone2(String phone2) {
 		this.phone2 = phone2;
 	}
 
-	public Integer getPhone3() {
+	public String getPhone3() {
 		return phone3;
 	}
 
-	public void setPhone3(Integer phone3) {
+	public void setPhone3(String phone3) {
 		this.phone3 = phone3;
 	}
 
+	public String getTel1() {
+		return tel1;
+	}
 
-	// toString
+	public void setTel1(String tel1) {
+		this.tel1 = tel1;
+	}
+
+	public String getTel2() {
+		return tel2;
+	}
+
+	public void setTel2(String tel2) {
+		this.tel2 = tel2;
+	}
+
+	public String getTel3() {
+		return tel3;
+	}
+
+	public void setTel3(String tel3) {
+		this.tel3 = tel3;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
 	@Override
 	public String toString() {
-		return "UserDto [userid=" + userid + ", password=" + password + ", username=" + username + ", zipcode="
-				+ zipcode + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone1=" + phone1 + ", phone2=" + phone2
-				+ ", phone3=" + phone3 + "]";
+		return "UserDto [userid=" + userid + ", password=" + password + ", rePassword=" + rePassword + ", username="
+				+ username + ", zipcode=" + zipcode + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone1=" + phone1
+				+ ", phone2=" + phone2 + ", phone3=" + phone3 + ", tel1=" + tel1 + ", tel2=" + tel2 + ", tel3=" + tel3
+				+ ", email=" + email + ", year=" + year + ", month=" + month + ", day=" + day + "]";
 	}
+	
+	
 }

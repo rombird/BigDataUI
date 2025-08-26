@@ -8,14 +8,18 @@
 %>
 
 <jsp:useBean id="dto" class="Ch02.UserDto" scope="request" />
-<jsp:setProperty name="dto" property="*" /> <!-- setProperty name = useBean id -->
+<jsp:setProperty name="dto" property="*" /> 
 <%
-	// 1 C05Form.html에서 전달되는 각 파라미터들을 저장할 단위(dto)를 만드세요
-	// (UserDto)
-	// 2 액션태그를 이용해서 모든 파라미터를 UserDto 단위로 저장합니다
-	// 3 화면에 UserDto에 저장된 내용을 출력해서 보여줍니다(UserDto 내에 toString재정의)
-	System.out.println("dto : " + dto);
+	// 유효성 검사
+	// DB 저장
+	request.setAttribute("userDto", dto); // request인 상태에서 유지될 수 있도록
+	request.setAttribute("url", "/join");
+	request.setAttribute("serviceNo", 1); // C:1, R:2, U:3, D:4
+	request.getRequestDispatcher("./DbUtils.jsp").forward(request,response);
+	
+	// main.jsp or login.jsp
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
