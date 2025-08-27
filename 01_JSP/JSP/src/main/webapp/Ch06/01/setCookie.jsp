@@ -12,6 +12,7 @@
 
 <%
 	Cookie cookie1 = new Cookie("cookie1", "value1");
+	cookie1.setPath("/");
 	// 쿠키의 유지기간(-1 : 기본값(파일생성X, 브라우저가 종료될때까지 쿠키 유지))
 	
 	Cookie cookie2 = new Cookie("cookie2", "value2");
