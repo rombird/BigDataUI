@@ -8,7 +8,7 @@
 	// 유효성 체크 - 값이 비어있으면 메시지창
 	public boolean isValid(UserDto dto){
 		if(dto.getUserid().isEmpty()){
-			System.out.println("Userid를 입력하세요."); // front로 던져줄 메시지
+			System.out.println("Userid를 입력하세요."); // front에 보이도록
 			return false;
 		}
 		if(dto.getUserid().length()<=5){

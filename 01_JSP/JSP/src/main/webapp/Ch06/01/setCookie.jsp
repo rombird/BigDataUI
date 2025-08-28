@@ -22,6 +22,7 @@
 	response.addCookie(cookie1); 
 	response.addCookie(cookie2); 
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
