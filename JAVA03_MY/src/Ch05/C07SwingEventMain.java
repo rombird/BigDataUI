@@ -37,7 +37,7 @@ class GUI extends JFrame implements ActionListener, KeyListener, MouseListener{
 		
 		
 		//Component 참조변수명
-		area = new JTextArea(); //textarea = area1
+		area = new JTextArea(); //text area = area1
 		// area.setBounds(10,10,260,280);
 		//textarea's scroll = scroll1
 		JScrollPane scroll1 = new JScrollPane(area);
@@ -56,7 +56,7 @@ class GUI extends JFrame implements ActionListener, KeyListener, MouseListener{
 		btn4.setBounds(270,300,110,30);
 		
 		
-		txt1 = new JTextField(); //textfield : txt1
+		txt1 = new JTextField(); //text field : txt1
 		txt1.setBounds(10,300,250,30);
 		
 		// Event 처리
