@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- 자원경로를 탐색할 때 특정한 경로에 있는 자원들 탐색할 수 있게 resource -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	
+	<!-- CONNECTION POOL SETTING(DataSource) -->
+	<Resource driverClassName="com.mysql.cj.jdbc.Driver"
+			  url="jdbc:mysql://localhost/opendatadb"
+			  username="root"
+			  password="1234"
+			  name="jdbc/MysqlDB"
+			  type="javax.sql.DataSource"
+			  auth="Container"
+			  maxActive="10"
+			  maxIdle="2"
+			  maxWait="5000" />
+	<!-- maxActive : 커넥션의 최대개수, maxIdel : 일을하지 않는 커넥션의 여유분(급하면 사용 8개를 메인으로 잡고), maxWait : 5초 정도는 기다림(timeout 값)  -->
+</Context>

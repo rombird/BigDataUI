@@ -1,9 +1,12 @@
 package Servlet;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 public class DbUtils {
 	// 속성(DB 연결관련된 멤버)
@@ -20,11 +23,22 @@ public class DbUtils {
 	// 기능
 	public static void conn() throws Exception {
 		// 드라이브 클래스 메모리 공간 적재
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		System.out.println("Driver Loading Success...");
-		// Connection conn 멤버에 Connection 객체 연결
-		conn = DriverManager.getConnection(url, id, pw);
-		System.out.println("DB CONNECTED...");
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		System.out.println("Driver Loading Success...");
+//		// Connection conn 멤버에 Connection 객체 연결
+//		conn = DriverManager.getConnection(url, id, pw);
+//		System.out.println("DB CONNECTED...");
+		
+		// servlet에서는 이름을 통해서 접근 -> 이름을 제대로 지정하지 않으면 연결자체가 X => name 중요
+		Context initContext = new InitialContext();
+		Context envContext = (Context)initContext.lookup("java:/comp/env"); // context에 있는 내용을 찾는 함수 (env 전체환경값을 가져옴)
+		DataSource dataSource = (DataSource)envContext.lookup("jdbc/MysqlDB"); 
+		conn = dataSource.getConnection(); // 위에서 만든 conn과 연결 
+		System.out.println("Conn : " + conn); 
+		
+		
+		
+		
 	}
 
 	public static void disConn() throws Exception {
