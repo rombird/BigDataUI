@@ -77,7 +77,7 @@ public class DbUtils {
 	
 	public static MemberDto selectMember(String userid) throws Exception{	
 		//tbl_member에 userid와 일치하는 데이터 받아와 MemberDto로 반환 
-		pstmt = conn.prepareStatement("select * from tbl_member");
+		pstmt = conn.prepareStatement("select * from tbl_member where userid=?");
 		pstmt.setString(1, userid); // tbl_member에서 userid 가져오기(userid는 PK로 동일한 값 없기 때문)
 		
 		rs = pstmt.executeQuery(); // pstmt에서 select한 결과를 rs로 담겠다.
@@ -109,7 +109,7 @@ public class DbUtils {
 	
 	public static void TxStart() throws Exception{
 		if(conn!=null) // 만약 연결되어있다면 
-			conn.setAutoCommit(false); // 
+			conn.setAutoCommit(false); 
 	}
 	public static void TxEnd() throws Exception {
 		if(conn!=null) // 만약 연결되어있다면

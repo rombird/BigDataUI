@@ -16,7 +16,7 @@
 			System.out.println("Password를 입력하세요.");
 			return false;
 		}
-		if(dto.getRePassword().isEmpty()){
+		/* if(dto.getRePassword().isEmpty()){
 			System.out.println("RePassword를 입력하세요.");
 			return false;
 		}
@@ -76,12 +76,12 @@
 			System.out.println("Day를 입력하세요.");
 			return false;
 		}
-		
+		*/
 		// 2) userid 길이 5자 이하(message : Userid는 5자 이상 입력하셔야 합니다.- System.out 으로 출력후 false)
 		if(dto.getUserid().length()<=5){
 			System.out.println("Userid는 5자 이상 입력하세요.");
 			return false;
-		}
+		} 
 		
 		// 3) 패스워드 유효성 검증(regex : ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$ )
 		//- System.out 으로 출력후 false
@@ -166,6 +166,7 @@
 		System.out.println("문제 발생 ROLLBACK");
 		// TX ROLLBACK 처리
 		DbUtils.RollBack();
+		e.printStackTrace();
 	}
 		
 %>
