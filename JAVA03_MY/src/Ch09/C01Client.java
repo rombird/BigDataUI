@@ -10,7 +10,7 @@ public class C01Client {
 	
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
-		Socket client = new Socket("192.168.5.2", 7000); // 192.168.5.3/ 5.2
+		Socket client = new Socket("192.168.5.50", 7000); // 192.168.5.3/ 5.2/5.50(선생님컴퓨터)
 		
 		InputStream in = client.getInputStream(); 
 		DataInputStream din = new DataInputStream(in); // 기존 스트림 연결

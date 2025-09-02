@@ -1,0 +1,155 @@
+package Ch10;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+class C03GUI extends JFrame implements ActionListener, KeyListener {
+	// area1, area2에 내용을 넣는 작업
+	JButton btn1;
+	JButton btn2;
+	JButton btn3;
+	JButton btn4;
+	JTextField txt1;
+	JTextArea area1; 
+	JTextArea area2;
+
+	Thread th1; // worker thread가 만들었을 때 연결
+	Thread th2;
+
+	C03GUI() {
+		super(); // 상위클래스 생성자 호출
+
+		setTitle("THREAD 확인하기");
+
+		// 패널 추가
+		JPanel pan1 = new JPanel();
+
+		// 컴포넌트 객체 생성
+		btn1 = new JButton("시작");
+		btn2 = new JButton("중지");
+
+		btn3 = new JButton("시작");
+		btn4 = new JButton("중지");
+		txt1 = new JTextField();
+		area1 = new JTextArea();
+		area2 = new JTextArea();
+		JScrollPane scroll1 = new JScrollPane(area1);
+		JScrollPane scroll2 = new JScrollPane(area2);
+
+		// 컴포넌트 위치 지정
+		scroll1.setBounds(50, 50, 190, 280);
+		scroll2.setBounds(300, 50, 190, 280);
+		// area1.setBounds(50,50,190,280); // Scroll추가시 제거
+		txt1.setBounds(50, 350, 190, 30);
+		btn1.setBounds(50, 400, 80, 30);
+		btn2.setBounds(160, 400, 80, 30);
+		btn3.setBounds(300, 400, 80, 30);
+		btn4.setBounds(410, 400, 80, 30);
+
+		// 컴포넌트를 리스너에 등록
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		btn3.addActionListener(this);
+		btn4.addActionListener(this);
+		txt1.addKeyListener(this);
+
+		// 기타설정
+		area1.setEditable(false);
+
+		// 패널에 컴포넌트 추가
+		pan1.add(btn1);
+		pan1.add(btn2);
+		pan1.add(btn3);
+		pan1.add(btn4);
+		pan1.add(txt1);
+		// pan1.add(area1); // Scroll추가시 제거
+		pan1.add(scroll1);
+		pan1.add(scroll2);
+
+		// 레이아웃 null
+		pan1.setLayout(null);
+
+		// 패널을 프레임에 추가
+		add(pan1);
+		setBounds(100, 100, 600, 500);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn1) {
+			System.out.println("btn1..clicked");	//시작 
+			C03Worker1 w1= new C03Worker1(this); // this : C03GUI로 객체가 생성되었을 때 주소 
+			th1 = new Thread(w1); // 만들어둔 w1을 thread에 연결 - 작업thread를 분리(main으로부터)
+			th1.start();
+		}
+		if (e.getSource() == btn2) {
+			System.out.println("btn2..clicked");	//종료
+			// 해당 실행되는 thread 중지 시켜주는 작업
+			if(th1!=null) { // th1이 연결된 객체가 있다면
+				th1.interrupt(); // interuppted 예외를 만들어버리고 C03Worker에서 e.printstackTree , break까지 실행됨 
+				th1=null;
+			} 
+		}
+		// C03Worker2에 작업 C03Worker1 작업과 동일
+		if (e.getSource() == btn3) {
+			System.out.println("btn3..clicked");
+			C03Worker2 w2 = new C03Worker2(this); // w2 객체 생성(C02Worker2에서 할 작업 실행) -> this를 넣게 되면 create constructor .. -> 생성
+			th2 = new Thread(w2);
+			th2.start(); 
+		}
+		if (e.getSource() == btn4) {
+			System.out.println("btn4..clicked");	
+			if(th2!=null) {
+				th2.interrupt();
+				th2=null;
+			}
+		}
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// System.out.println(e.getKeyChar());
+		// System.out.println(e.getKeyCode());
+		if (e.getKeyCode() == 10) // 엔터키 입력
+		{
+			String tmp = txt1.getText();
+			area1.append(tmp + "\n");
+			txt1.setText("");
+		}
+
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+public class C03SwingMain {
+
+	public static void main(String[] args) {
+		new C03GUI();
+		
+
+	}
+
+}
