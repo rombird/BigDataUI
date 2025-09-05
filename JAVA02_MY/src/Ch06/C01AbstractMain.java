@@ -16,9 +16,7 @@ abstract class Parent2{
 	abstract void func();	//추상메서드(미완성된 함수, {} 가 없는)
 }
 class Son2 extends Parent2{
-
 	void func() {System.out.println("Son2's func() call!");} 
-	
 }
 
 public class C01AbstractMain {

@@ -37,7 +37,7 @@ public class C06UpDownCastingMain {
 //		Sub ob5 = (Sub)ob1;
 //		ob5.n1=100;	//실제 있는 n1공간에 값 대입(문제 없음)
 //		ob5.n2=200;
-		
+//		
 //		Sub down =(Sub)ob4;	//Upcasting을 전제로 한 Downcasting
 //		down.n1=1000;
 //		down.n2=2000;

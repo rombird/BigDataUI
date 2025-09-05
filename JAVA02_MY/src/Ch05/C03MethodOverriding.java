@@ -47,8 +47,11 @@ public class C03MethodOverriding {
 		cat.Sound();
 		
 		System.out.println("---------------");
-		animal = dog;	//상위클래스형 참조변수 = 하위객체
-		animal.Sound();
+		animal = dog;	// 상위클래스형 참조변수 = 하위객체
+		animal.Sound(); 
+		// 하위객체에서 추가한 속성이나 기능에 접근할 수 없다  -> instanceof다운 캐스팅을 해줘야 접근 가능
+		// 하위객체에서 재정의한 기능에 접근할 수 있다.(void Sound() -> 같은 함수명으로 재정의)
+		// --> 추상클래스 -> 인터페이스
 		animal = cat;
 		animal.Sound();
 		
