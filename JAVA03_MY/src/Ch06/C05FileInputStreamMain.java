@@ -13,7 +13,8 @@ public class C05FileInputStreamMain {
 		long startTime = System.currentTimeMillis();
 		StringBuffer stringBuffer = new StringBuffer();
 		byte[] buff = new byte[4096];
-		while(true) {
+		while(true) { 
+			// fin.read() -> 한글자한글자를 읽어들이는 방법
 			int data = fin.read(buff); // byte로 받아서 int로 읽는다 -> buff추가시 시간 단축됨
 			if(data==-1)
 				break;

@@ -28,7 +28,6 @@ public class C02ReaderMain {
 		// 끝나면 종료작업
 		fin.close();
 		
-		
 	}
 
 }

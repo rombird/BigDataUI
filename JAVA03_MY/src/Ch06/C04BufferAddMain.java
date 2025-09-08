@@ -14,7 +14,7 @@ public class C04BufferAddMain {
 		
 		StringBuffer strBuffer = new StringBuffer(); // 문자를 덧붙일 때 사용(이렇게 하지 않으면 덧붙이는 과정에서 메모리공간 계속 생성)
 		
-		char [] buff = new char[4096]; // 데이터사이즈가 4096보다 커져있어야 받아낼 수 있음
+//		char [] buff = new char[4096]; // 데이터사이즈가 4096보다 커져있어야 받아낼 수 있음
 		
 //		int data;
 //		while((data = fin.read(buff)) != -1) { // buff를 쓰면 시간이 많이 줄어듦
@@ -23,7 +23,7 @@ public class C04BufferAddMain {
 //		}
 		
 		while(true) {
-			int data = fin.read(buff); 
+			int data = fin.read(); 
 			if(data==-1)
 				break;
 			strBuffer.append((char)data);

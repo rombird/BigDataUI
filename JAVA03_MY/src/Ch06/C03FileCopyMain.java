@@ -14,7 +14,7 @@ public class C03FileCopyMain {
 		// args[0] : 원본 파일 경로(원본 파일명)
 		// args[1] : 복사 대상 경로(복사 파일명)
 		
-		// IOTEST에 있는 파일 복사
+		// IOTEST에 있는 파일 복사 -> 마우스 우클릭 -> Run Configuration -> Arguments -> 원본파일명 복사할파일명 입력 -> Run
 		Reader fin = new FileReader(PATH + args[0]); // origin으로 데이터를 받아서 받은 데이터를 fout방향으로 저장
 		Writer fout = new FileWriter(PATH + args[1]);
 		

@@ -27,6 +27,7 @@ public class C07FileCopyMain {
 			int data = fin.read(buff); // buff사이즈로 받아내겠다고 하는 순간 얼마만큼의 바이트수를 읽었는지 
 			if (data == -1)
 				break; 
+			// 0번 인덱스로부터 읽어들인 data의 수만큼 write해서 읽어들이겠다
 			fout.write(buff, 0, data); // point!! 
 			fout.flush(); 
 		}
