@@ -25,10 +25,10 @@ public class C01FunctionalInterfaceMain {
 	public static void main(String[] args) {
 		// 01
 		Func1 func1 = (message)->{System.out.println(message+"_!");};
-		func1.say("HELLO WORLD");
+		func1.say("HELLO WORLD"); // HELLO WORLD_!
 		
 		Func1 func1_2 = System.out::println;
-		func1_2.say("HELLO WORLD");
+		func1_2.say("HELLO WORLD"); // HELLO WORLD
 		
 		// 02
 		Func2 func2 = (arr)->{
@@ -37,7 +37,7 @@ public class C01FunctionalInterfaceMain {
 				sum+=n;
 			return sum;
 		};
-		System.out.println(func2.sum(10,20,30,40,50,60)); 
+		System.out.println(func2.sum(10,20,30,40,50,60)); // 210
 		
 		// 03
 		Func3 func3 = (arr)->{
