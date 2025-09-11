@@ -22,7 +22,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Simple ob = new Simple();
-		System.out.println(ob); 
+		System.out.println(ob); // Ch20.Simple@17a7cec2
 
 	}
 
