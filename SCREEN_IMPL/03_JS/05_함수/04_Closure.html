@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 클로저
+        // 클로저는 내부함수가 외부함수의 변수에 접근할 수 있는 방법을 의미한다.
+        // 정보 은닉: 클로저를 사용하여 외부에서 접근할 수 없도록 변수가 보호하고, 
+        // 함수를 통해서만 접근 가능하도록 제한할 수 있다.
+
+        // 데이터 보존 : 클로저를 사용하여 함수가 생성될 당시의 환경을 유지하면서,
+        // 함수내에서 데이터를 영구적으로 보존할 수 있다.
+        // 비동기 처리 : 클로저를 사용하여 비동기적인 작업에서 결과를 유지하고, 필요할 때에 접근할 수 있다. 
+
+        // 01
+        // 외부함수
+        // function outer(){
+        //     // 상태값 보관
+        //     let state = 0;
+        //     // 내부 함수
+        //     function addOne(){
+        //         state++;
+        //         console.log('state..', state); // 렉시컬 스코프 적용
+        //         console.dir(addOne);
+        //     }
+        //     return addOne; // 함수 이름이 리턴되면 만들어진 함수의 위치정보(함수의 메모리 주소)가 반환
+        // }
+        // const closureFunc = outer(); // addOne 반환 -> 함수가 정의된 위치정보 같이 공유
+        // console.log('closreFunc', closureFunc); 
+        // closureFunc(); // outer에 있는 state 1 증가 
+        // closureFunc(); // outer에 있는 state 2
+        // closureFunc(); // outer에 있는 state 3
+        // closureFunc(); // outer에 있는 state 4 
+        // console.log('-----------------------')
+
+        // 02
+
+        // 전역 스코프
+        var x = 'global x'
+        var n1 = 10;
+        console.log("window", window.x); // window global x
+
+        // outer 함수 지역 스코프
+        function outer() {
+            var x = 'outer x'
+            var y = 0;
+
+            // inner 함수 지역 스코프
+            function inner() {
+                var x = 'inner x'
+
+                // if 블록 지역 스코프
+                if (x) {
+                    const x = 'if block scope'
+                    console.log(x)  // if block scope
+                    y++;
+                    console.log('y', y) // outer 함수 내  y
+                    n1++; 
+                    console.log('n1',n1) // window(전역스코프) n1
+                    // console.log(z) // Uncaught ReferenceError: z is not defined
+                }
+                console.dir(inner); // f inner()
+            }
+
+           return inner;
+        }
+
+        const clousureFunc2=outer()
+                         // y n1 
+        clousureFunc2(); // 1 11
+        clousureFunc2(); // 2 12
+        clousureFunc2(); // 3 13
+        clousureFunc2(); // 4 14
+        clousureFunc2(); // 5 15
+
+        // clousureFunc2() --> console.log(x) , console.log('y', y), console.log('n1', n1), console.dir(inner) 출력됨
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    KEYUP : <input id="input1"><br>
+    <p id="p1"></p>
+    <hr>
+    KEYDOWN : <input id="input2"><br>
+    <p id="p2"></p>
+    <hr>
+    KEYPRESS : <input id="input3"><br>
+    <p id="p3"></p>
+    <hr>
+
+    <script>
+        // KEYUP : 키보드가 올라올 때(누르고 뗄 때) -> 제어문자(ex.shift) 인식 O, 대소문자 구별 X
+        const keyupEl = document.querySelector('#input1');
+        const p1El = document.querySelector('#p1');
+        keyupEl.addEventListener("keyup", (e)=>{
+            // console.log("keyup...", e); // keybordEvent{} -> keyCode (ASCII코드) 보면 -> 대소문자 구별 X
+            console.log("keyup e.key : ", e.key);
+            console.log("keyup e.keyCode : ", e.keyCode);
+
+            // keyupEl에 key를 입력하고 엔터(enter의 keyCode는 13임을 확인하고 작업) -> p태그에 저장
+            if(e.keyCode==13){
+                //input value의 값을 p1El안에 넣기
+                const value = keyupEl.value;
+                p1El.innerHTML += value+"<br/>"; // enter하고 작성한 또다른 key는 그 다음줄에 출력 (innerHTML = innerHTML(처음 쳤던 값) + value+"<br/>")
+                keyupEl.value=""; // enter -> input에 입력했던 기존 값은 지워짐
+
+            }
+        })
+
+        // KEYDOWN : 키보드가 내려갈 때(누를 때) -> 제어문자(ex.shift) 인식 O, 대소문자 구별 X
+        const keydownEl = document.querySelector('#input2');
+        const p2El = document.querySelector('#p2');
+        keydownEl.addEventListener('keydown', (e)=>{
+            console.log("keydown...", e);
+
+
+        });
+
+        // KEYPRESS : 키보드를 계속 누를 때 -> 제어문자(ex.shift) 인식 X, 대소문자 구별 O
+        const keypressEl = document.querySelector('#input3');
+        const p3El = document.querySelector('#p3');
+        keypressEl.addEventListener("keypress",(e)=>{
+            console.log("keypress", e);
+
+            
+        })
+    </script>
+</body>
+</html>

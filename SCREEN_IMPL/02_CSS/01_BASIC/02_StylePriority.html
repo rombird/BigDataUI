@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style 절차 지향 순서 어떻게 되는 지 하나씩 해보기
+     h1 -> link -> h1 자체 style -> !important (권장X) -->
+    <!-- 문서내 style 태그 -->
+    <style>
+        h1{
+            background-color:coral; 
+            color:white !important;
+        }
+    </style>
+    <!-- 외부 css 생성 후 link 설정(href에 경로설정) -->
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <h1 style="background-color:red; color:black;">HELLO WORLD</h1>
+</body>
+</html>
